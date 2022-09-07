@@ -1,0 +1,30 @@
+QPushButton#pushButton_Home
+{
+        background:#00FFFFFF;
+}
+QPushButton:hover#pushButton_Home
+{
+        border:100px;
+        background:rgb(246,246,247);
+}
+
+
+QPushButton#pushButton_My
+{
+        background:#00FFFFFF;
+}
+QPushButton:hover#pushButton_My
+{
+        border:0px;
+        background:rgb(246,246,247);
+}
+
+QPushButton#pushButton_Bin
+{
+        background:rgb(246,246,247);
+}
+QPushButton:hover#pushButton_Bin
+{
+        border:0px;
+        background:rgb(246,246,247);
+}
