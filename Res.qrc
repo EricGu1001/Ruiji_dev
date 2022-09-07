@@ -11,5 +11,6 @@
         <file>images/searchIcon.png</file>
         <file>images/pullBtn.png</file>
         <file>images/file_upload.png</file>
+        <file>images/file_uploadbig.png</file>
     </qresource>
 </RCC>

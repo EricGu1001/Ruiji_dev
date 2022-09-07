@@ -12,17 +12,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     picturebox.cpp \
-    uploadmenu.cpp
+    uploadmenu.cpp \
+    uploadwidget.cpp
 
 HEADERS += \
     loadfileqss.h \
     mainwindow.h \
     picturebox.h \
-    uploadmenu.h
+    uploadmenu.h \
+    uploadwidget.h
 
 FORMS += \
     mainwindow.ui \
-    uploadmenu.ui
+    uploadmenu.ui \
+    uploadwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
