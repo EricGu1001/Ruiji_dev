@@ -1,4 +1,4 @@
-void on_pushButton_message_clicked();
+void on_pushButton_clicked();
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

@@ -69,26 +69,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    if(puploadmenu)
     {
-       if(puploadmenu)
-      {
-           if(puploadmenu->isHidden())
-           {
-              puploadmenu->show();
-           }
-            else {//    })
-
-                puploadmenu->hide();
-            }
+        if(puploadmenu->isHidden())
+        {
+            puploadmenu->show();
         }
         else {
-            Uploadmenu *puploadmenu= new Uploadmenu;
-            puploadmenu->setMouseTracking(true);
-            puploadmenu->setGeometry(1548,112,300,100); //这里要调整好
-            puploadmenu->raise();
-            puploadmenu->show();
+            puploadmenu->hide();
         }
 
     }
+    else {
+        puploadmenu = new Uploadmenu(this);
+        puploadmenu->setMouseTracking(true);
+        puploadmenu->setGeometry(1548,112,300,100); //这里要调整好
+        puploadmenu->raise();  //提示显示层数
+        puploadmenu->show();
+    }
+
 }
 
