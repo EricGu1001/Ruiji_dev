@@ -55,9 +55,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     //上传按钮
     ui->pushButton->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
-//    connect(ui->pushButton,&QPushButton::clicked,[=](){
-//        Uploadmenu *uploadmenu = new Uploadmenu;
-//        uploadmenu->show();
 
 
 }
@@ -82,11 +79,16 @@ void MainWindow::on_pushButton_clicked()
     }
     else {
         puploadmenu = new Uploadmenu(this);
-        puploadmenu->setMouseTracking(true);
-        puploadmenu->setGeometry(1548,112,300,100); //这里要调整好
+//        MainWindow* mainwindow=new MainWindow();
+        ui->horizontalLayout_2->addWidget(puploadmenu);
         puploadmenu->raise();  //提示显示层数
+        puploadmenu->setMouseTracking(true);
+//        puploadmenu->setGeometry(1548,112,300,100); //这里要调整好
+//        puploadmenu->move(1548,112);
+
         puploadmenu->show();
     }
 
 }
+
 

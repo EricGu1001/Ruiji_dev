@@ -46,7 +46,7 @@
      <string>上传音视频文件</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
+   <widget class="QWidget" name="widget_frame" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -55,20 +55,10 @@
       <height>220</height>
      </rect>
     </property>
-    <widget class="QWidget" name="widget_pic" native="true">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>40</y>
-       <width>64</width>
-       <height>78</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>240</x>
+       <x>230</x>
        <y>150</y>
        <width>331</width>
        <height>41</height>
@@ -81,6 +71,22 @@
      </property>
      <property name="text">
       <string>将文件拖拽至此区域或选择文件上传</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_upload">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>50</y>
+       <width>64</width>
+       <height>78</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/images/file_uploadbig.png);</string>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </widget>
