@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "picturebox.h"
-#include "uploadmenu.h"
 #include <QImage>
 #include <QGraphicsOpacityEffect>
 #include <QWidget>
@@ -79,16 +78,11 @@ void MainWindow::on_pushButton_clicked()
     }
     else {
         puploadmenu = new Uploadmenu(this);
-//        MainWindow* mainwindow=new MainWindow();
-        ui->horizontalLayout_2->addWidget(puploadmenu);
+        puploadmenu->setGeometry(1548,80,300,100);
         puploadmenu->raise();  //提示显示层数
         puploadmenu->setMouseTracking(true);
-//        puploadmenu->setGeometry(1548,112,300,100); //这里要调整好
-//        puploadmenu->move(1548,112);
-
         puploadmenu->show();
     }
 
 }
-
 

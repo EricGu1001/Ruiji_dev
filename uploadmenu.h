@@ -21,9 +21,14 @@ public:
     //鼠标按下
     virtual void mousePressEvent(QMouseEvent *ev);
 
+protected:
+
+bool eventFilter(QObject * obj, QEvent * event);
+void leaveEvent(QEvent *event);
 
 private:
     Ui::Uploadmenu *ui;
+    UploadWidget * puploadwidget = nullptr;
 };
 
 #endif // UPLOADMENU_H

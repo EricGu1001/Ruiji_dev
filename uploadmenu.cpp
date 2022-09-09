@@ -5,43 +5,71 @@
 #include <QDesktopWidget>
 #include "mainwindow.h"
 #include "picturebox.h"
+#include <QGraphicsDropShadowEffect>
 
+void Uploadmenu::leaveEvent(QEvent *event)
+{
+    Q_UNUSED(event);
+     QGraphicsDropShadowEffect * no_shadow_effect = new QGraphicsDropShadowEffect();
+     no_shadow_effect->setOffset(0, 0);
+         //阴影颜色
+//         no_shadow_effect->setColor(QColor(255,255,255, 127));
+         //阴影半径
+         no_shadow_effect->setBlurRadius(0);
+         this->setGraphicsEffect(no_shadow_effect);
+     qDebug() << "123";
+}
 Uploadmenu::Uploadmenu(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Uploadmenu)
 {
     setAttribute(Qt::WA_StyledBackground); //设置样式表
-
     ui->setupUi(this);
-    //在任务栏上不显示图标
-    setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint|Qt::Tool|Qt::WindowStaysOnTopHint);
-     //外层窗口显示为透明
+
+
+    this->setAttribute(Qt::WA_Hover, true); //开启悬停事件
+    this->installEventFilter(this); //安装事件过滤器
+    //外层窗口显示为透明
     setAttribute(Qt::WA_TranslucentBackground,true);
+    ui->widget_2->setAttribute(Qt::WA_TranslucentBackground,true);
     ui->widget->setMode(PictureBox::FIXED_SIZE);
     QImage *img = new QImage(":/images/file_upload.png");
     ui->widget->setImage(*img);
-   ui->frame->setStyleSheet("QFrame{border-radius:15px;}QFrame:hover{border:0px;background:rgb(215, 237, 255);}");
-
-    ui->label->setAttribute(Qt::WA_TranslucentBackground);
+    //样式
+   ui->frame->setStyleSheet("QFrame{border-radius:15px;}");
+   ui->label->setAttribute(Qt::WA_TranslucentBackground);
 
 }
 
-
-
-
-
-
 void Uploadmenu::mousePressEvent(QMouseEvent *ev){
     if(ev->button() == Qt::LeftButton){
-        UploadWidget* puploadwidget = new UploadWidget(this);
+        puploadwidget = new UploadWidget();
         puploadwidget->setMouseTracking(true);
- //     puploadwidget->setGeometry(1548,112,300,100); //这里要调整好
+        puploadwidget->setGeometry(300,300,890,570); //这里要调整好
         puploadwidget->raise();  //提示显示层数
         puploadwidget->show();
         this->close();
     }
 }
-
+bool Uploadmenu::eventFilter(QObject * obj, QEvent * event)
+    {
+        if(obj == this)
+        {
+            if(event->type() == QEvent::HoverEnter) //当鼠标悬停在获取雷达参数按钮上
+            {
+                QGraphicsDropShadowEffect * shadow = new QGraphicsDropShadowEffect();
+                    //渲染的像素点
+                    shadow->setBlurRadius(30);
+                    //渲染的颜色
+                    shadow->setColor(Qt::gray);
+                    //渲染相对于组件的偏移
+                    shadow->setOffset(8);
+                    this->setGraphicsEffect(shadow);
+                return true;
+            }
+        }
+        return QWidget::eventFilter(obj, event);
+    }
 
 Uploadmenu::~Uploadmenu()
 {

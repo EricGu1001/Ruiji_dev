@@ -15,10 +15,15 @@ public:
     explicit UploadWidget(QWidget *parent = nullptr);
     ~UploadWidget();
 
-    //鼠标按下
-    virtual void mousePressEvent(QMouseEvent *ev);
+protected:
+    void dragEnterEvent(QDragEnterEvent *event);
+    void dropEvent(QDropEvent *event);
+
+private slots:
+    void on_pushButton_upload_clicked();
 
 private:
+    void setupView();
     Ui::UploadWidget *ui;
 };
 
