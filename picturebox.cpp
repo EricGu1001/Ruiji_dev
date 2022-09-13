@@ -1,6 +1,7 @@
 #include "picturebox.h"
 #include <QPainter>
 #include <QDebug>
+#include <QMouseEvent>
 static const int IMAGE_WIDTH = 160;
 static const int IMAGE_HEIGHT = 120;
 static const QSize IMAGE_SIZE = QSize(IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -96,6 +97,17 @@ void PictureBox::paintEvent(QPaintEvent * event)
         break;
     }
 }
+void PictureBox::mousePressEvent(QMouseEvent *ev)
+{
+    mousePos = QPoint(ev->x(), ev->y());
+}
+void PictureBox::mouseReleaseEvent(QMouseEvent *ev)
+{
+    if(mousePos == QPoint(ev->x(), ev->y())){
+        emit beclicked();
+    }
+}
+
 
 PictureBox::~PictureBox()
 {

@@ -17,7 +17,6 @@ void Uploadmenu::leaveEvent(QEvent *event)
          //阴影半径
          no_shadow_effect->setBlurRadius(0);
          this->setGraphicsEffect(no_shadow_effect);
-     qDebug() << "123";
 }
 Uploadmenu::Uploadmenu(QWidget *parent) :
     QWidget(parent),
@@ -44,8 +43,9 @@ Uploadmenu::Uploadmenu(QWidget *parent) :
 void Uploadmenu::mousePressEvent(QMouseEvent *ev){
     if(ev->button() == Qt::LeftButton){
         puploadwidget = new UploadWidget();
+        puploadwidget->setParent(this->parentWidget());
         puploadwidget->setMouseTracking(true);
-        puploadwidget->setGeometry(300,300,890,570); //这里要调整好
+        puploadwidget->setGeometry(515,255,890,570); //这里要调整好
         puploadwidget->raise();  //提示显示层数
         puploadwidget->show();
         this->close();
