@@ -12,7 +12,6 @@ PictureBox::PictureBox(QWidget *parent) : QWidget(parent)
     m_pixmap.fill();
     m_scale = 1.0;
     m_mode = FIXED_SIZE;
-//    m_brush = QBrush(Qt::white);
 }
 
 void PictureBox::setBackground(QBrush brush)

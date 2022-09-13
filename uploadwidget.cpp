@@ -17,7 +17,6 @@ UploadWidget::UploadWidget(QWidget *parent) :
     setAttribute(Qt::WA_TranslucentBackground,true);
     ui->frame->setStyleSheet("QFrame{border-radius:20px;background:rgb(255, 255, 255);}");
     ui->widget_frame->setStyleSheet("QWidget{border:2px dotted #242424;}");
-
     //关闭按钮
     ui->widget->setMode(PictureBox::FIXED_SIZE);
     QImage *img = new QImage(":/images/close.png");
@@ -67,7 +66,6 @@ void UploadWidget::dropEvent(QDropEvent *event)
 //    img.load(url);
 //    ui->labelImg->setPixmap(QPixmap::fromImage(img));
 }
-
 
 void UploadWidget::setupView()
 {
