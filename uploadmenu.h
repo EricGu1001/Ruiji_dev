@@ -11,9 +11,6 @@ class Uploadmenu : public QWidget
 {
     Q_OBJECT
 
-
-
-
 public:
     explicit Uploadmenu(QWidget *parent = nullptr);
     ~Uploadmenu();

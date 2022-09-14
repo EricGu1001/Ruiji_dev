@@ -63,7 +63,7 @@ bool Uploadmenu::eventFilter(QObject * obj, QEvent * event)
                     //渲染的颜色
                     shadow->setColor(Qt::gray);
                     //渲染相对于组件的偏移
-                    shadow->setOffset(8);
+                    shadow->setOffset(5);
                     this->setGraphicsEffect(shadow);
                 return true;
             }

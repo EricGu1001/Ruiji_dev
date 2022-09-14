@@ -9,21 +9,27 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    delete.cpp \
     main.cpp \
     mainwindow.cpp \
     picturebox.cpp \
+    uploadconfirm.cpp \
     uploadmenu.cpp \
     uploadwidget.cpp
 
 HEADERS += \
+    delete.h \
     loadfileqss.h \
     mainwindow.h \
     picturebox.h \
+    uploadconfirm.h \
     uploadmenu.h \
     uploadwidget.h
 
 FORMS += \
+    delete.ui \
     mainwindow.ui \
+    uploadconfirm.ui \
     uploadmenu.ui \
     uploadwidget.ui
 
