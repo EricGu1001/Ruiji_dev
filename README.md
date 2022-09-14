@@ -9,15 +9,14 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  将项目克隆到本地
+2.  使用Qt Creator打开项目ruiji.pro文件 
+3.  编译运行
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  qt 版本 5.15.2
+2.  mingw 64bit构建
 
 #### 参与贡献
 
