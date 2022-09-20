@@ -13,5 +13,8 @@
         <file>images/file_upload.png</file>
         <file>images/file_uploadbig.png</file>
         <file>images/close.png</file>
+        <file>images/no_content_in_recyclebin.png</file>
+        <file>font/SourceHanSansSC-Medium.ttf</file>
+        <file>images/123.jpg</file>
     </qresource>
 </RCC>

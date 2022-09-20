@@ -106,7 +106,7 @@
   <customwidget>
    <class>PictureBox</class>
    <extends>QWidget</extends>
-   <header location="global">picturebox.h</header>
+   <header>picturebox.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

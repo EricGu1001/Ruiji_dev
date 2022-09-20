@@ -1,28 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "picturebox.h"
 #include <QImage>
 #include <QGraphicsOpacityEffect>
 #include <QWidget>
 #include <QFile>
+#include <QDebug>
 #include <QAction>
+#include <QMouseEvent>
 
-
+enum eStackedWidgetID{eForm1 = 0,eForm2,eForm3};  // 页码编号
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-//    setAttribute(Qt::WA_StyledBackground); //设置样式表
 
-    //为button设置样式
-    ui->widget_My->setStyleSheet("QWidget{background:#00FFFFFF;border-radius:15px}QWidget:hover{border:0px;background:rgb(215, 237, 255);}");
-    ui->widget_Home->setStyleSheet("QWidget{background:#00FFFFFF;border-radius:15px}QWidget:hover{border:0px;background:rgb(215, 237, 255);}");
-    ui->widget_Bin->setStyleSheet("QWidget{background:#00FFFFFF;border-radius:15px}QWidget:hover{border:0px;background:rgb(215, 237, 255);}");
-    ui->label_My->setStyleSheet("Qlabel:hover{border:0px;background:rgb(215, 237, 255);}");
-    ui->label_Home->setAttribute(Qt::WA_TranslucentBackground);
-    ui->label_My->setAttribute(Qt::WA_TranslucentBackground);
-    ui->label_Bin->setAttribute(Qt::WA_TranslucentBackground);
     //设置左边建筑背景图片
     ui->leftWidget->setStyleSheet("QWidget{background-image: url(:/images/background_left.png)}");
     ui->widget_2->setStyleSheet("QWidget{background-image: url(:/images/background_right .png);}");
@@ -30,21 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     //设置背景颜色
     ui->widget_back->setStyleSheet("QWidget{background:rgb(237, 245, 255)}");
     ui->widget_titile->setStyleSheet("QWidget{background:rgb(237, 242, 250)}");
-    ui->widget_tableTitle->setStyleSheet("QWidget{background:rgb(249, 251, 255)}");
-    ui->widget_table->setStyleSheet("QWidget{background:rgb(249, 251, 255)}");
 
-    //设置标签图片
-    ui->homePic->setMode(PictureBox::FIXED_SIZE);
-    ui->myPic->setMode(PictureBox::FIXED_SIZE);
-    ui->binPic->setMode(PictureBox::FIXED_SIZE);
-
-    QImage* imgHome = new QImage(":/images/my.png");
-    QImage* imgMy = new QImage(":/images/file.png");
-    QImage* imgBin = new QImage(":/images/bin.png");
-
-    ui->homePic->setImage(*imgHome);
-    ui->myPic->setImage(*imgMy);
-    ui->binPic->setImage(*imgBin);
 
     //搜索框实现
     QAction* pLeadingAction = new QAction(this);
@@ -55,6 +33,29 @@ MainWindow::MainWindow(QWidget *parent)
     //上传按钮
     ui->pushButton->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
 
+
+    widget_my = new Widget_My(this);
+    widget_my->setGeometry(134,112,332,64);
+
+    widget_mycontent = new Widget_Mycontent(this);
+    widget_mycontent->setGeometry(134,192,332,64);
+
+    widget_bin = new Widget_Bin(this);
+    widget_bin->setGeometry(134,272,332,64);
+
+    //页面切换
+    homepage = new Homepage(this);
+    mycontent = new MyContent(this);
+    recyclebin = new RecycleBin(this);
+
+    ui->stackedWidget->insertWidget(eForm1,homepage);
+    ui->stackedWidget->insertWidget(eForm2,mycontent);
+    ui->stackedWidget->insertWidget(eForm3,recyclebin);
+
+    ui->stackedWidget->setCurrentIndex(eForm1);
+    connect(widget_my,SIGNAL(beclicked()),this,SLOT(mouseClicked_home()));
+    connect(widget_mycontent,SIGNAL(beclicked()),this,SLOT(mouseClicked_mycontent()));
+    connect(widget_bin,SIGNAL(beclicked()),this,SLOT(mouseClicked_bin()));
 
 }
 
@@ -84,5 +85,14 @@ void MainWindow::on_pushButton_clicked()
         puploadmenu->show();
     }
 
+}
+void MainWindow::mouseClicked_home(){
+    ui->stackedWidget->setCurrentIndex(eForm1);
+}
+void MainWindow::mouseClicked_mycontent(){
+    ui->stackedWidget->setCurrentIndex(eForm2);
+}
+void MainWindow::mouseClicked_bin(){
+    ui->stackedWidget->setCurrentIndex(eForm3);
 }
 

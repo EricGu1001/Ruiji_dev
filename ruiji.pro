@@ -10,28 +10,62 @@ CONFIG += c++17
 
 SOURCES += \
     delete.cpp \
+    deletedialog.cpp \
+    detail.cpp \
+    homepage.cpp \
+    homepagelistitem.cpp \
+    listitem.cpp \
     main.cpp \
     mainwindow.cpp \
+    mycontent.cpp \
     picturebox.cpp \
+    qclickwidget.cpp \
+    recyclebin.cpp \
+    setfontutil.cpp \
     uploadconfirm.cpp \
     uploadmenu.cpp \
-    uploadwidget.cpp
+    uploadwidget.cpp \
+    widget_bin.cpp \
+    widget_my.cpp \
+    widget_mycontent.cpp
 
 HEADERS += \
     delete.h \
+    deletedialog.h \
+    detail.h \
+    homepage.h \
+    homepagelistitem.h \
+    listitem.h \
     loadfileqss.h \
     mainwindow.h \
+    mycontent.h \
     picturebox.h \
+    qclickwidget.h \
+    recyclebin.h \
+    setfontutil.h \
     uploadconfirm.h \
     uploadmenu.h \
-    uploadwidget.h
+    uploadwidget.h \
+    widget_bin.h \
+    widget_my.h \
+    widget_mycontent.h
 
 FORMS += \
     delete.ui \
+    deletedialog.ui \
+    detail.ui \
+    homepage.ui \
+    homepagelistitem.ui \
+    listitem.ui \
     mainwindow.ui \
+    mycontent.ui \
+    recyclebin.ui \
     uploadconfirm.ui \
     uploadmenu.ui \
-    uploadwidget.ui
+    uploadwidget.ui \
+    widget_bin.ui \
+    widget_my.ui \
+    widget_mycontent.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Homepage</class>
+ <widget class="QWidget" name="Homepage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>982</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="lb_file">
+   <property name="geometry">
+    <rect>
+     <x>73</x>
+     <y>41</y>
+     <width>46</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>文件</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_belonging">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>41</y>
+     <width>94</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>不限归属</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_time">
+   <property name="geometry">
+    <rect>
+     <x>855</x>
+     <y>41</y>
+     <width>48</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>时间</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_operation">
+   <property name="geometry">
+    <rect>
+     <x>1320</x>
+     <y>41</y>
+     <width>48</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>操作</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="contentList">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>89</y>
+     <width>1400</width>
+     <height>711</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

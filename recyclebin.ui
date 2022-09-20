@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RecycleBin</class>
+ <widget class="QWidget" name="RecycleBin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>982</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgba(249, 251, 255, 1)</string>
+  </property>
+  <widget class="QLabel" name="lb_file">
+   <property name="geometry">
+    <rect>
+     <x>73</x>
+     <y>41</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102, 102, 102, 1)</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;文件&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_createtime">
+   <property name="geometry">
+    <rect>
+     <x>854</x>
+     <y>41</y>
+     <width>95</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102, 102, 102, 1)</string>
+   </property>
+   <property name="text">
+    <string>创建时间</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_operation">
+   <property name="geometry">
+    <rect>
+     <x>1321</x>
+     <y>41</y>
+     <width>48</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102, 102, 102, 1)</string>
+   </property>
+   <property name="text">
+    <string>操作</string>
+   </property>
+  </widget>
+  <widget class="PictureBox" name="recyclebin_pic" native="true">
+   <property name="geometry">
+    <rect>
+     <x>479</x>
+     <y>337</y>
+     <width>350</width>
+     <height>350</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_no_content">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>707</y>
+     <width>167</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>无近期删除文件</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="contentList">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>89</y>
+     <width>1400</width>
+     <height>711</height>
+    </rect>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="currentRow">
+    <number>-1</number>
+   </property>
+  </widget>
+  <zorder>contentList</zorder>
+  <zorder>lb_file</zorder>
+  <zorder>lb_createtime</zorder>
+  <zorder>lb_operation</zorder>
+  <zorder>recyclebin_pic</zorder>
+  <zorder>lb_no_content</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PictureBox</class>
+   <extends>QWidget</extends>
+   <header>picturebox.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
