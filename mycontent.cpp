@@ -37,7 +37,7 @@ MyContent::MyContent(QWidget *parent)
             listItem->setMeetingTitle("两分钟上手会议瑞记");
             listItem->setDuration("2分16秒");
             listItem->setCreateTime("2022年9月5日 下午7：05");
-            listItem->setImage(":/img/123.jpg");
+            listItem->setImage(":/images/123.jpg");
             //listItem->setAttribute(Qt::WA_TransparentForMouseEvents);
 
             //        ui->contentList->addItem(item);

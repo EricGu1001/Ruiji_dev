@@ -31,6 +31,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:15px</string>
+  </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
@@ -41,7 +45,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);border-radius:15px;</string>
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:15px;</string>
    </property>
    <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
