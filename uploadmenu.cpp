@@ -24,7 +24,8 @@ Uploadmenu::Uploadmenu(QWidget *parent) :
 {
     setAttribute(Qt::WA_StyledBackground); //设置样式表
     ui->setupUi(this);
-
+//    setWindowFlags(Qt::Tool |Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint|Qt::Dialog);
+//    setWindowModality(Qt::ApplicationModal);
 
     this->setAttribute(Qt::WA_Hover, true); //开启悬停事件
     this->installEventFilter(this); //安装事件过滤器
@@ -44,6 +45,7 @@ void Uploadmenu::mousePressEvent(QMouseEvent *ev){
     if(ev->button() == Qt::LeftButton){
         puploadwidget = new UploadWidget();
         puploadwidget->setParent(this->parentWidget());
+        puploadwidget->setWindowModality(Qt::ApplicationModal);
         puploadwidget->setMouseTracking(true);
         puploadwidget->setGeometry(515,255,890,570); //这里要调整好
         puploadwidget->raise();  //提示显示层数
@@ -57,6 +59,7 @@ bool Uploadmenu::eventFilter(QObject * obj, QEvent * event)
         {
             if(event->type() == QEvent::HoverEnter) //当鼠标悬停在获取雷达参数按钮上
             {
+                qDebug() << ("123");
                 QGraphicsDropShadowEffect * shadow = new QGraphicsDropShadowEffect();
                     //渲染的像素点
                     shadow->setBlurRadius(30);

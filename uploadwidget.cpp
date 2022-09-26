@@ -12,7 +12,7 @@ UploadWidget::UploadWidget(QWidget *parent) :
     ui(new Ui::UploadWidget)
 {
     ui->setupUi(this);
-   setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint|Qt::Tool|Qt::WindowStaysOnTopHint);
+   setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint|Qt::Tool|Qt::WindowStaysOnTopHint|Qt::Dialog);
      //外层窗口显示为透明
     setAttribute(Qt::WA_TranslucentBackground,true);
     ui->frame->setStyleSheet("QFrame{border-radius:20px;background:rgb(255, 255, 255);}");

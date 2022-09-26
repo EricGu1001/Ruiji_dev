@@ -89,6 +89,9 @@ border:10px</string>
      <height>711</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgba(249,251,255,1);
 border:0px;

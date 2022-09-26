@@ -82,6 +82,7 @@ void MainWindow::on_pushButton_clicked()
         puploadmenu->setGeometry(1548,80,300,100);
         puploadmenu->raise();  //提示显示层数
         puploadmenu->setMouseTracking(true);
+        puploadmenu->setWindowModality(Qt::ApplicationModal);
         puploadmenu->show();
     }
 

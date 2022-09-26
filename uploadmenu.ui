@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>Uploadmenu</class>
  <widget class="QWidget" name="Uploadmenu">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>299</width>
-    <height>102</height>
+    <width>300</width>
+    <height>100</height>
    </rect>
   </property>
   <property name="sizeIncrement">
@@ -15,6 +18,9 @@
     <width>300</width>
     <height>100</height>
    </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::StrongFocus</enum>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>

@@ -1,7 +1,6 @@
 #include "mycontent.h"
 #include "ui_mycontent.h"
 #include "listitem.h"
-#include "deletedialog.h"
 #include <QFont>
 #include<QFontDatabase>
 #include <QListWidgetItem>
@@ -22,7 +21,6 @@ MyContent::MyContent(QWidget *parent)
             SetFontUtil::setMyFont(ui->lb_file);
             SetFontUtil::setMyFont(ui->lb_operation);
 
-            DeleteDialog *deleteDialog = new DeleteDialog;
 
         for(int i=0;i<5;i++){
             QListWidgetItem* item = new QListWidgetItem(ui->contentList);
@@ -47,7 +45,10 @@ MyContent::MyContent(QWidget *parent)
         }
         connect(ui->btn_delete,&QPushButton::clicked,[=](){
             qDebug()<<"123";
-            deleteDialog->show();
+            deletedialog = new DeleteDialog();
+            deletedialog->setParent(this->parentWidget());
+//            deletedialog->setGeometry(630,350,660,381);
+            deletedialog->show();
         });
 
     }

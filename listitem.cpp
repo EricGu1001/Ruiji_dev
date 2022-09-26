@@ -52,11 +52,11 @@ bool ListItem::eventFilter(QObject * obj, QEvent * event)
             {
                 QGraphicsDropShadowEffect * shadow = new QGraphicsDropShadowEffect();
                     //渲染的像素点
-                    shadow->setBlurRadius(30);
+                    shadow->setBlurRadius(45);
                     //渲染的颜色
                     shadow->setColor(Qt::gray);
                     //渲染相对于组件的偏移
-                    shadow->setOffset(5);
+                    shadow->setOffset(0);
                    this->setGraphicsEffect(shadow);
                 return true;
             }

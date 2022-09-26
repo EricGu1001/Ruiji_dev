@@ -2,7 +2,7 @@
 #define MYCONTENT_H
 
 #include <QWidget>
-
+#include <deletedialog.h>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MyContent; }
 QT_END_NAMESPACE
@@ -21,5 +21,7 @@ private slots:
 
 private:
     Ui::MyContent *ui;
+    DeleteDialog * deletedialog = nullptr;
+
 };
 #endif // MYCONTENT_H
