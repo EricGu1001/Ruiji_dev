@@ -89,10 +89,6 @@ border:10px</string>
      <height>711</height>
     </rect>
    </property>
-<<<<<<< HEAD
-   <property name="focusPolicy">
-    <enum>Qt::StrongFocus</enum>
-=======
    <property name="minimumSize">
     <size>
      <width>1400</width>
@@ -104,7 +100,6 @@ border:10px</string>
      <width>1400</width>
      <height>711</height>
     </size>
->>>>>>> 78677116dcfcfea1512f1137c134d2b2b26a17a4
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgba(249,251,255,1);
