@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,6 +23,7 @@ SOURCES += \
     recyclebin.cpp \
     setfontutil.cpp \
     uploadconfirm.cpp \
+    uploadfileutil.cpp \
     uploadmenu.cpp \
     uploadwidget.cpp \
     widget_bin.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     recyclebin.h \
     setfontutil.h \
     uploadconfirm.h \
+    uploadfileutil.h \
     uploadmenu.h \
     uploadwidget.h \
     widget_bin.h \
@@ -67,6 +69,8 @@ FORMS += \
     widget_my.ui \
     widget_mycontent.ui
 
+
+INCLUDEPATH += C:/OpenSSL-Win32/include
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

@@ -6,7 +6,7 @@
 #include <QFileDialog>
 #include <QMimeData>
 #include "picturebox.h"
-
+#include "uploadfileutil.h"
 UploadWidget::UploadWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::UploadWidget)
@@ -38,8 +38,11 @@ void UploadWidget::mouseClicked(){
 void UploadWidget::on_pushButton_upload_clicked()
 {
 
-    QStringList filename = QFileDialog::getOpenFileNames(this,"选择视频上传","","files(*.mp4)");
-    qDebug() << filename;
+    QStringList filenames = QFileDialog::getOpenFileNames(this,"选择视频上传","","files(*.mp4)");
+    for(int i=0;i<filenames.length();i++){
+        qDebug()<<UploadFileUtil::UploadFile(filenames[i]);
+    }
+    //qDebug() << filename;
 }
 
 void UploadWidget::dragEnterEvent(QDragEnterEvent *event)
