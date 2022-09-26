@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //设置左边建筑背景图片
     ui->leftWidget->setStyleSheet("QWidget{background-image: url(:/images/background_left.png)}");
-    ui->widget_2->setStyleSheet("QWidget{background-image: url(:/images/background_right .png);}");
+    ui->widget_2->setStyleSheet("QWidget{background-image: url(:/images/background_right.png);}");
 
     //设置背景颜色
     ui->widget_back->setStyleSheet("QWidget{background:rgb(237, 245, 255)}");
