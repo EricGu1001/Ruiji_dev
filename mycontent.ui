@@ -42,7 +42,7 @@ border:10px</string>
    <property name="geometry">
     <rect>
      <x>855</x>
-     <y>41</y>
+     <y>39</y>
      <width>95</width>
      <height>31</height>
     </rect>
@@ -89,8 +89,22 @@ border:10px</string>
      <height>711</height>
     </rect>
    </property>
+<<<<<<< HEAD
    <property name="focusPolicy">
     <enum>Qt::StrongFocus</enum>
+=======
+   <property name="minimumSize">
+    <size>
+     <width>1400</width>
+     <height>711</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1400</width>
+     <height>711</height>
+    </size>
+>>>>>>> 78677116dcfcfea1512f1137c134d2b2b26a17a4
    </property>
    <property name="styleSheet">
     <string notr="true">background-color:rgba(249,251,255,1);
@@ -107,7 +121,7 @@ border-color: rgba(255, 255, 255, 0);</string>
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
    <property name="selectionMode">
-    <enum>QAbstractItemView::MultiSelection</enum>
+    <enum>QAbstractItemView::NoSelection</enum>
    </property>
    <property name="selectionBehavior">
     <enum>QAbstractItemView::SelectItems</enum>

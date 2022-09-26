@@ -10,6 +10,18 @@
     <height>158</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1360</width>
+    <height>158</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1360</width>
+    <height>158</height>
+   </size>
+  </property>
   <property name="mouseTracking">
    <bool>true</bool>
   </property>

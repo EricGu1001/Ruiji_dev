@@ -31,6 +31,7 @@ MyContent::MyContent(QWidget *parent)
             //qDebug()<<listItem->width()<<listItem->height();
             item->setSizeHint(QSize(listItem->width(),listItem->height()));
             item->setBackground(QColor(249,251,255,1));
+            item->setFlags(item->flags()&~Qt::ItemIsSelectable);
             listItem->setMeetingTitle("两分钟上手会议瑞记");
             listItem->setDuration("2分16秒");
             listItem->setCreateTime("2022年9月5日 下午7：05");
