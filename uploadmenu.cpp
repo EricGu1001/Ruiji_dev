@@ -43,9 +43,9 @@ Uploadmenu::Uploadmenu(QWidget *parent) :
 
 void Uploadmenu::mousePressEvent(QMouseEvent *ev){
     if(ev->button() == Qt::LeftButton){
-        puploadwidget = new UploadWidget();
+        puploadwidget = new UploadWidget(NULL);
+        puploadwidget->setAttribute(Qt::WA_ShowModal, true);
         puploadwidget->setParent(this->parentWidget());
-        puploadwidget->setWindowModality(Qt::ApplicationModal);
         puploadwidget->setMouseTracking(true);
         puploadwidget->setGeometry(515,255,890,570); //这里要调整好
         puploadwidget->raise();  //提示显示层数

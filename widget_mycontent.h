@@ -14,10 +14,10 @@ class Widget_Mycontent : public QWidget
 public:
     explicit Widget_Mycontent(QWidget *parent = nullptr);
     ~Widget_Mycontent();
+    Ui::Widget_Mycontent *ui;
 signals:
     void beclicked();
 private:
-    Ui::Widget_Mycontent *ui;
     QPoint mousePos;
 protected:
     void mousePressEvent(QMouseEvent *ev);

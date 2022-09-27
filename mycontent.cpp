@@ -20,7 +20,7 @@ MyContent::MyContent(QWidget *parent)
             SetFontUtil::setMyFont(ui->lb_createTime);
             SetFontUtil::setMyFont(ui->lb_file);
             SetFontUtil::setMyFont(ui->lb_operation);
-
+            SetFontUtil::setMyFont(ui->btn_delete);
 
         for(int i=0;i<5;i++){
             QListWidgetItem* item = new QListWidgetItem(ui->contentList);
@@ -45,10 +45,9 @@ MyContent::MyContent(QWidget *parent)
 
         }
         connect(ui->btn_delete,&QPushButton::clicked,[=](){
-            qDebug()<<"123";
             deletedialog = new DeleteDialog();
             deletedialog->setParent(this->parentWidget());
-//            deletedialog->setGeometry(630,350,660,381);
+            deletedialog->setGeometry(390,251,660,381);
             deletedialog->show();
         });
 

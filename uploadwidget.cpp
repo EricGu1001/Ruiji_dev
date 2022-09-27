@@ -5,6 +5,7 @@
 #include <uploadwidget.h>
 #include <QFileDialog>
 #include <QMimeData>
+#include <QGraphicsDropShadowEffect>
 #include "picturebox.h"
 
 UploadWidget::UploadWidget(QWidget *parent) :
@@ -21,7 +22,14 @@ UploadWidget::UploadWidget(QWidget *parent) :
     ui->widget->setMode(PictureBox::FIXED_SIZE);
     QImage *img = new QImage(":/images/close.png");
     ui->widget->setImage(*img);
-
+    QGraphicsDropShadowEffect * shadow = new QGraphicsDropShadowEffect();
+        //渲染的像素点
+        shadow->setBlurRadius(30);
+        //渲染的颜色
+        shadow->setColor(Qt::gray);
+        //渲染相对于组件的偏移
+        shadow->setOffset(5);
+        this->setGraphicsEffect(shadow);
     connect(ui->widget,SIGNAL(beclicked()),this,SLOT(mouseClicked()));
 
 }

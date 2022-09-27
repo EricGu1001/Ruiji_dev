@@ -19,7 +19,6 @@ SOURCES += \
     mainwindow.cpp \
     mycontent.cpp \
     picturebox.cpp \
-    qclickwidget.cpp \
     recyclebin.cpp \
     setfontutil.cpp \
     uploadconfirm.cpp \
@@ -40,7 +39,6 @@ HEADERS += \
     mainwindow.h \
     mycontent.h \
     picturebox.h \
-    qclickwidget.h \
     recyclebin.h \
     setfontutil.h \
     uploadconfirm.h \

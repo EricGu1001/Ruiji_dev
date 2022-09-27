@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::DeleteDialog *ui;
+public slots:
+    void mouseClicked();
 };
 
 #endif // DELETEDIALOG_H
