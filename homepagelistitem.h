@@ -25,6 +25,9 @@ public:
 
     //设置图片
     void setImage(QString imgURL);
+    //设置操作图片
+    void setOperationImg(QString imgURL);
+
     void mouseMoveEvent(QMouseEvent* e);
 
 private:

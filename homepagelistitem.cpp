@@ -41,6 +41,12 @@ void HomepageListItem::setImage(QString imgURL){
     QImage *img = new QImage(imgURL);
     ui->thumbnail->setImage(*img);
 }
+//设置操作图片
+void HomepageListItem::setOperationImg(QString imgURL){
+    QImage *img = new QImage(imgURL);
+    ui->trash_pic->setImage(*img);
+}
+
 
 void HomepageListItem::mouseMoveEvent(QMouseEvent* e){
 

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">color:rgba(102,102,102,1)</string>
+  </property>
   <widget class="QWidget" name="widget_Bin" native="true">
    <property name="geometry">
     <rect>
@@ -27,13 +30,13 @@
      <rect>
       <x>70</x>
       <y>20</y>
-      <width>91</width>
+      <width>96</width>
       <height>26</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>12</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="text">

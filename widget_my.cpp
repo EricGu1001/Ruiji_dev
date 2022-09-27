@@ -18,6 +18,8 @@ Widget_My::Widget_My(QWidget *parent) :
     QImage* imgHome = new QImage(":/images/my.png");
 
     ui->homePic->setImage(*imgHome);
+    //图片鼠标穿透
+    ui->homePic->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 
 }
 void Widget_My::mousePressEvent(QMouseEvent *ev)

@@ -39,6 +39,9 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgba(102, 102, 102, 1);</string>
+   </property>
    <property name="text">
     <string>文件</string>
    </property>
@@ -56,6 +59,9 @@
     <font>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102,102,102,1)</string>
    </property>
    <property name="text">
     <string>不限归属</string>
@@ -75,6 +81,9 @@
      <pointsize>18</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102,102,102,1)</string>
+   </property>
    <property name="text">
     <string>时间</string>
    </property>
@@ -92,6 +101,9 @@
     <font>
      <pointsize>18</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(102,102,102,1)</string>
    </property>
    <property name="text">
     <string>操作</string>

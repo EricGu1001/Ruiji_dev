@@ -26,6 +26,7 @@ Homepage::Homepage(QWidget *parent) :
         listItem->setDuration("2分16秒");
         listItem->setCreateTime("2022年9月5日 下午7：05");
         listItem->setImage(":/images/123.jpg");
+        listItem->setOperationImg(":/images/bin.png");
         //listItem->setAttribute(Qt::WA_TransparentForMouseEvents);
 
         //        ui->contentList->addItem(item);

@@ -11,6 +11,9 @@ void on_pushButton_clicked();
 #include "homepage.h"
 #include "mycontent.h"
 #include "recyclebin.h"
+#include "homepagetop.h"
+#include "mycontenttop.h"
+#include "recyclebintop.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -39,5 +42,10 @@ private:
     Homepage * homepage = nullptr;
     MyContent * mycontent = nullptr;
     RecycleBin * recyclebin = nullptr;
+
+    HomepageTop *homepageTop = nullptr;
+    MyContentTop *mycontentTop = nullptr;
+    RecyclebinTop *recyclebinTop = nullptr;
+
 };
 #endif // MAINWINDOW_H

@@ -15,6 +15,8 @@ Widget_Bin::Widget_Bin(QWidget *parent) :
     ui->binPic->setMode(PictureBox::FIXED_SIZE);
     QImage* imgBin = new QImage(":/images/bin.png");
     ui->binPic->setImage(*imgBin);
+    //图片鼠标穿透
+    ui->binPic->setAttribute(Qt::WA_TransparentForMouseEvents, true);
 }
 void Widget_Bin::mousePressEvent(QMouseEvent *ev)
 {

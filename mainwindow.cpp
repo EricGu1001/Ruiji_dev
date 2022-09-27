@@ -7,8 +7,9 @@
 #include <QDebug>
 #include <QAction>
 #include <QMouseEvent>
-
+#include "setfontutil.h"
 enum eStackedWidgetID{eForm1 = 0,eForm2,eForm3};  // 页码编号
+enum eTopStackedWidgetID{eTop1 = 0,eTop2,eTop3};  // 头部页码编号
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,15 +25,19 @@ MainWindow::MainWindow(QWidget *parent)
     ui->widget_titile->setStyleSheet("QWidget{background:rgb(237, 242, 250)}");
 
 
-    //搜索框实现
-    QAction* pLeadingAction = new QAction(this);
-    pLeadingAction->setIcon(QIcon(":/images/searchIcon.png"));
-    ui->searchEdit->addAction(pLeadingAction, QLineEdit::LeadingPosition);
-    ui->searchEdit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255);border-radius:15px}");
+//    //搜索框实现
+//    QAction* pLeadingAction = new QAction(this);
+//    pLeadingAction->setIcon(QIcon(":/images/searchIcon.png"));
+//    ui->searchEdit->addAction(pLeadingAction, QLineEdit::LeadingPosition);
+//    ui->searchEdit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255);border-radius:15px}");
 
-    //上传按钮
-    ui->pushButton->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
+//    //上传按钮
+//    ui->pushButton->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
 
+
+    //设置字体
+    //SetFontUtil::setMyFont(ui->label_5);
+    SetFontUtil::setMyFont(ui->label_6);
 
     widget_my = new Widget_My(this);
     widget_my->setGeometry(134,112,332,64);
@@ -51,8 +56,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->insertWidget(eForm1,homepage);
     ui->stackedWidget->insertWidget(eForm2,mycontent);
     ui->stackedWidget->insertWidget(eForm3,recyclebin);
-
     ui->stackedWidget->setCurrentIndex(eForm1);
+
+    //头部切换
+    homepageTop = new HomepageTop(this);
+    mycontentTop = new MyContentTop(this);
+    recyclebinTop = new RecyclebinTop(this);
+
+    ui->topStackedWidget->insertWidget(eTop1,homepageTop);
+    ui->topStackedWidget->insertWidget(eTop2,mycontentTop);
+    ui->topStackedWidget->insertWidget(eTop3,recyclebinTop);
+    ui->topStackedWidget->setCurrentIndex(eForm1);
+
     connect(widget_my,SIGNAL(beclicked()),this,SLOT(mouseClicked_home()));
     connect(widget_mycontent,SIGNAL(beclicked()),this,SLOT(mouseClicked_mycontent()));
     connect(widget_bin,SIGNAL(beclicked()),this,SLOT(mouseClicked_bin()));
@@ -88,11 +103,14 @@ void MainWindow::on_pushButton_clicked()
 }
 void MainWindow::mouseClicked_home(){
     ui->stackedWidget->setCurrentIndex(eForm1);
+    ui->topStackedWidget->setCurrentIndex(eTop1);
 }
 void MainWindow::mouseClicked_mycontent(){
     ui->stackedWidget->setCurrentIndex(eForm2);
+    ui->topStackedWidget->setCurrentIndex(eTop2);
 }
 void MainWindow::mouseClicked_bin(){
     ui->stackedWidget->setCurrentIndex(eForm3);
+    ui->topStackedWidget->setCurrentIndex(eTop3);
 }
 

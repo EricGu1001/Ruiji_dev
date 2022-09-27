@@ -70,8 +70,8 @@ border-radius:15px</string>
      <rect>
       <x>252</x>
       <y>91</y>
-      <width>76</width>
-      <height>19</height>
+      <width>101</width>
+      <height>25</height>
      </rect>
     </property>
     <property name="font">

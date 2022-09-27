@@ -14,13 +14,16 @@ SOURCES += \
     detail.cpp \
     homepage.cpp \
     homepagelistitem.cpp \
+    homepagetop.cpp \
     listitem.cpp \
     main.cpp \
     mainwindow.cpp \
     mycontent.cpp \
+    mycontenttop.cpp \
     picturebox.cpp \
     qclickwidget.cpp \
     recyclebin.cpp \
+    recyclebintop.cpp \
     setfontutil.cpp \
     uploadconfirm.cpp \
     uploadfileutil.cpp \
@@ -36,13 +39,16 @@ HEADERS += \
     detail.h \
     homepage.h \
     homepagelistitem.h \
+    homepagetop.h \
     listitem.h \
     loadfileqss.h \
     mainwindow.h \
     mycontent.h \
+    mycontenttop.h \
     picturebox.h \
     qclickwidget.h \
     recyclebin.h \
+    recyclebintop.h \
     setfontutil.h \
     uploadconfirm.h \
     uploadfileutil.h \
@@ -58,10 +64,13 @@ FORMS += \
     detail.ui \
     homepage.ui \
     homepagelistitem.ui \
+    homepagetop.ui \
     listitem.ui \
     mainwindow.ui \
     mycontent.ui \
+    mycontenttop.ui \
     recyclebin.ui \
+    recyclebintop.ui \
     uploadconfirm.ui \
     uploadmenu.ui \
     uploadwidget.ui \

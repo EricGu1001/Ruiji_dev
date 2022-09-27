@@ -38,87 +38,17 @@
       <height>98</height>
      </rect>
     </property>
-    <widget class="QLabel" name="label_5">
+    <widget class="QStackedWidget" name="topStackedWidget">
      <property name="geometry">
       <rect>
-       <x>40</x>
-       <y>38</y>
-       <width>71</width>
-       <height>22</height>
+       <x>0</x>
+       <y>0</y>
+       <width>1440</width>
+       <height>98</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">font: 650 12pt &quot;Microsoft JhengHei&quot;;
-</string>
-     </property>
-     <property name="text">
-      <string>主页</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="searchEdit">
-     <property name="geometry">
-      <rect>
-       <x>710</x>
-       <y>23</y>
-       <width>495</width>
-       <height>52</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="cursor">
-      <cursorShape>IBeamCursor</cursorShape>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::ClickFocus</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>32769</number>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-     <property name="placeholderText">
-      <string>搜索瑞记</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>1230</x>
-       <y>23</y>
-       <width>138</width>
-       <height>52</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>上传</string>
-     </property>
-     <property name="icon">
-      <iconset resource="Res.qrc">
-       <normaloff>:/images/pullBtn.png</normaloff>:/images/pullBtn.png</iconset>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <property name="autoExclusive">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
-     </property>
+     <widget class="QWidget" name="page_3"/>
+     <widget class="QWidget" name="page_4"/>
     </widget>
    </widget>
    <widget class="QWidget" name="leftWidget" native="true">
@@ -152,16 +82,19 @@
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>20</y>
-        <width>101</width>
-        <height>51</height>
+        <x>53</x>
+        <y>36</y>
+        <width>110</width>
+        <height>27</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>20</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgba(102,102,102,1)</string>
       </property>
       <property name="text">
        <string>会议瑞记</string>
@@ -242,7 +175,7 @@ background-color: rgba(193, 220, 245, 1)</string>
      <string notr="true">background-color: rgb(249, 251, 255)</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page"/>
     <widget class="QWidget" name="page_2"/>
@@ -269,8 +202,6 @@ background-color: rgba(193, 220, 245, 1)</string>
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="Res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

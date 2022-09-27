@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyContentTop</class>
+ <widget class="QWidget" name="MyContentTop">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>98</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color:rgba(237, 242, 250, 1)</string>
+  </property>
+  <widget class="QLabel" name="lb_mycontent">
+   <property name="geometry">
+    <rect>
+     <x>29</x>
+     <y>35</y>
+     <width>110</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(26, 26, 26, 1)</string>
+   </property>
+   <property name="text">
+    <string>我的内容</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="searchEdit">
+   <property name="geometry">
+    <rect>
+     <x>736</x>
+     <y>22</y>
+     <width>495</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>搜索瑞记</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>1252</x>
+     <y>23</y>
+     <width>138</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="text">
+    <string>上传</string>
+   </property>
+   <property name="icon">
+    <iconset resource="Res.qrc">
+     <normaloff>:/images/pullBtn.png</normaloff>:/images/pullBtn.png</iconset>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>98</y>
+     <width>1440</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+   </property>
+   <property name="lineWidth">
+    <number>3</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="Res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
