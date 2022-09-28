@@ -1,5 +1,5 @@
 QT       += core gui
-
+QT       += core gui network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++17
@@ -64,7 +64,7 @@ FORMS += \
     widget_bin.ui \
     widget_my.ui \
     widget_mycontent.ui
-
+INCLUDEPATH += C:/OpenSSL-Win32/include
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
