@@ -1,14 +1,14 @@
-#include "delete.h"
-#include "ui_delete.h"
-#include <QGraphicsDropShadowEffect>
+#include "deletetest.h"
+#include "ui_deletetest.h"
 #include "picturebox.h"
-Delete::Delete(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Delete)
+#include <QGraphicsDropShadowEffect>
+DeleteTest::DeleteTest(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::DeleteTest)
 {
     setWindowFlags(Qt::FramelessWindowHint);
-    setAttribute(Qt::WA_TranslucentBackground,true);
     ui->setupUi(this);
+    setAttribute(Qt::WA_TranslucentBackground,true);
     ui->widget_2->setMode(PictureBox::FIXED_SIZE);
     QImage *img = new QImage(":/images/close.png");
     ui->widget_2->setImage(*img);
@@ -20,13 +20,12 @@ Delete::Delete(QWidget *parent) :
         shadow->setColor(Qt::gray);
         //渲染相对于组件的偏移
         shadow->setOffset(5);
-        this->setGraphicsEffect(shadow);
-
+        ui->widget->setGraphicsEffect(shadow);
 }
-void Delete::mouseClicked(){
+void DeleteTest::mouseClicked(){
     this->close();
 }
-Delete::~Delete()
+DeleteTest::~DeleteTest()
 {
     delete ui;
 }

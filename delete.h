@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Delete *ui;
+public slots:
+    void mouseClicked();
 };
 
 #endif // DELETE_H

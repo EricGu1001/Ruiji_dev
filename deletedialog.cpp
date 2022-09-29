@@ -25,7 +25,6 @@ DeleteDialog::DeleteDialog(QWidget *parent) :
         connect(ui->btn_delete,SIGNAL(beclicked()),this,SLOT(mouseClicked()));
     ui->line->setStyleSheet("QFrame{background-color:rgb(206, 220, 245)}");
 
-    this->setStyleSheet("QWidget{background-color:rgb(255, 255, 255)}");
     ui->delete_title->setAlignment(Qt::AlignCenter);
 
     QImage *img = new QImage(":/images/close.png");

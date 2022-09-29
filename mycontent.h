@@ -19,9 +19,11 @@ public:
 private slots:
     void on_btn_delete_clicked();
 
+    void on_checkBox_stateChanged(int arg1);
+
 private:
     Ui::MyContent *ui;
     DeleteDialog * deletedialog = nullptr;
-
+    void getAll();
 };
 #endif // MYCONTENT_H

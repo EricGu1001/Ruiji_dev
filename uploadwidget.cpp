@@ -45,7 +45,7 @@ void UploadWidget::mouseClicked(){
 //文件上传对话框
 void UploadWidget::on_pushButton_upload_clicked()
 {
-    QStringList filename = QFileDialog::getOpenFileNames(this,"选择视频上传","","files(*.mp4);;");
+    QStringList filename = QFileDialog::getOpenFileNames(this,"选择视频上传","","files(*.mp4)");
     qDebug() << filename;
 }
 

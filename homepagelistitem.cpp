@@ -3,6 +3,7 @@
 #include "setfontutil.h"
 #include <QMouseEvent>
 #include<QFontDatabase>
+#include <QDebug>
 #include <QGraphicsEffect>
 HomepageListItem::HomepageListItem(QWidget *parent) :
     QWidget(parent),
@@ -20,6 +21,7 @@ HomepageListItem::HomepageListItem(QWidget *parent) :
     SetFontUtil::setMyFont(ui->lb_name);
     SetFontUtil::setMyFont(ui->lb_title);
     this->setMouseTracking(true);
+    connect(ui->trash_pic,SIGNAL(beclicked()),this,SLOT(mouseClicked()));
 
 }
 
@@ -84,4 +86,10 @@ void HomepageListItem::leaveEvent(QEvent *event)
 HomepageListItem::~HomepageListItem()
 {
     delete ui;
+}
+void HomepageListItem::mouseClicked(){
+    pdelete = new Delete();
+    pdelete->setParent(this->parentWidget());
+    pdelete->setGeometry(390,275,661,433);
+    pdelete->show();
 }

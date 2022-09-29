@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     delete.cpp \
     deletedialog.cpp \
+    deletetest.cpp \
     detail.cpp \
     homepage.cpp \
     homepagelistitem.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
 HEADERS += \
     delete.h \
     deletedialog.h \
+    deletetest.h \
     detail.h \
     homepage.h \
     homepagelistitem.h \
@@ -51,6 +53,7 @@ HEADERS += \
 FORMS += \
     delete.ui \
     deletedialog.ui \
+    deletetest.ui \
     detail.ui \
     homepage.ui \
     homepagelistitem.ui \

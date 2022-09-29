@@ -2,7 +2,8 @@
 #define HOMEPAGELISTITEM_H
 
 #include <QWidget>
-
+#include "delete.h"
+#include "deletetest.h"
 namespace Ui {
 class HomepageListItem;
 }
@@ -32,7 +33,12 @@ public:
 
 private:
     Ui::HomepageListItem *ui;
-
+    Delete * pdelete = nullptr;
+    DeleteTest * deletetest = nullptr;
+signals:
+    void beclicked();
+public slots:
+    void mouseClicked();
 protected:
     bool eventFilter(QObject * obj, QEvent * event);
     void leaveEvent(QEvent *event);
