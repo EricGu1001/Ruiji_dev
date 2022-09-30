@@ -19,29 +19,22 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //设置字体
     SetFontUtil::setMyFont(ui->label_6);
-    SetFontUtil::setMyFont(ui->searchEdit);
-    SetFontUtil::setMyFont(ui->pushButton);
     //设置左边建筑背景图片
     ui->leftWidget->setStyleSheet("QWidget{background-image: url(:/images/background_left.png)}");
     ui->widget_2->setStyleSheet("QWidget{background-image: url(:/images/background_right .png);}");
 
     //设置背景颜色
     ui->widget_back->setStyleSheet("QWidget{background:rgb(237, 245, 255)}");
-    ui->widget_titile->setStyleSheet("QWidget{background:rgb(237, 242, 250)}");
 
 
     //搜索框实现
     QAction* pLeadingAction = new QAction(this);
     pLeadingAction->setIcon(QIcon(":/images/searchIcon.png"));
-    ui->searchEdit->addAction(pLeadingAction, QLineEdit::LeadingPosition);
-    ui->searchEdit->setStyleSheet("QLineEdit { background: rgb(255, 255, 255);border-radius:15px}");
-
-    //上传按钮
-    ui->pushButton->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
 
 
     widget_my = new Widget_My(this);
     widget_my->setGeometry(134,112,332,64);
+    widget_my->raise();
 
     widget_mycontent = new Widget_Mycontent(this);
     widget_mycontent->setGeometry(134,192,332,64);
@@ -62,6 +55,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(widget_my,SIGNAL(beclicked()),this,SLOT(mouseClicked_home()));
     connect(widget_mycontent,SIGNAL(beclicked()),this,SLOT(mouseClicked_mycontent()));
     connect(widget_bin,SIGNAL(beclicked()),this,SLOT(mouseClicked_bin()));
+    QImage* imgHome = new QImage(":/images/my_click .png");
+    QImage* imgBin = new QImage(":/images/bin.png");
+    QImage* imgMy = new QImage(":/images/file.png");
+    widget_my->ui->homePic->setImage(*imgHome);
+    widget_bin->ui->binPic->setImage(*imgBin);
+    widget_mycontent->ui->myPic->setImage(*imgMy);
+    widget_my->ui->widgetmy->setStyleSheet("QWidget{background:rgb(215, 237, 255);border:0px;border-radius:15px}");
 
 }
 
@@ -70,46 +70,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    if(puploadmenu)
-    {
-        if(puploadmenu->isHidden())
-        {
-//            setModality(false);
-//            puploadmenu->setEnabled(true);
-            puploadmenu->show();
-        }
-        else {
-//            setModality(true);
-            puploadmenu->hide();
-        }
-
-    }
-    else {
-//        setModality(false);
-        puploadmenu = new Uploadmenu(this);
-        puploadmenu->setGeometry(1548,80,300,100);
-        puploadmenu->raise();  //提示显示层数
-        puploadmenu->setMouseTracking(true);
-        puploadmenu->setWindowModality(Qt::ApplicationModal);
-        puploadmenu->show();
-    }
-
-}
-
-//void MainWindow::setModality(bool flag)
-//{
-//    QList<QWidget *> widgets = this->findChildren<QWidget *>();
-//    widgets.append(ui->widget_titile->findChildren<QWidget *>());
-//    for(auto widget: widgets)
-//    {
-//        widget->setEnabled(flag);
-//    }
-//    ui->centralwidget->setEnabled(true);
-//    ui->widget_titile->setEnabled(true);
-//    ui->pushButton->setEnabled(true);
-//}
 void MainWindow::mouseClicked_home(){
     ui->stackedWidget->setCurrentIndex(eForm1);
     QImage* imgHome = new QImage(":/images/my_click .png");

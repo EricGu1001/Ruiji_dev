@@ -25,7 +25,6 @@ public:
 signals:
     void beclicked();
 private slots:
-    void on_pushButton_clicked();
 //     void setModality(bool flag);
 public slots:
     void mouseClicked_home();

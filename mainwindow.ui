@@ -32,104 +32,6 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget_titile" native="true">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>0</y>
-      <width>1440</width>
-      <height>98</height>
-     </rect>
-    </property>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>38</y>
-       <width>71</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font: 650 12pt &quot;Microsoft JhengHei&quot;;
-</string>
-     </property>
-     <property name="text">
-      <string>主页</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="searchEdit">
-     <property name="geometry">
-      <rect>
-       <x>710</x>
-       <y>23</y>
-       <width>495</width>
-       <height>52</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="cursor">
-      <cursorShape>IBeamCursor</cursorShape>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::ClickFocus</enum>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="maxLength">
-      <number>32769</number>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-     <property name="placeholderText">
-      <string>搜索瑞记</string>
-     </property>
-     <property name="clearButtonEnabled">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>1230</x>
-       <y>23</y>
-       <width>138</width>
-       <height>52</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>上传</string>
-     </property>
-     <property name="icon">
-      <iconset resource="Res.qrc">
-       <normaloff>:/images/pullBtn.png</normaloff>:/images/pullBtn.png</iconset>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="checked">
-      <bool>false</bool>
-     </property>
-     <property name="autoExclusive">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </widget>
    <widget class="QWidget" name="leftWidget" native="true">
     <property name="geometry">
      <rect>
@@ -242,9 +144,9 @@ background-color: rgba(193, 220, 245, 1)</string>
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>100</y>
+      <y>0</y>
       <width>1440</width>
-      <height>981</height>
+      <height>1080</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -256,30 +158,8 @@ background-color: rgba(193, 220, 245, 1)</string>
     <widget class="QWidget" name="page"/>
     <widget class="QWidget" name="page_2"/>
    </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>100</y>
-      <width>1440</width>
-      <height>2</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:rgba(193, 220, 245, 1);
-background-color: rgba(193, 220, 245, 1)</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
   </widget>
  </widget>
- <resources>
-  <include location="Res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

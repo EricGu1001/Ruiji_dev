@@ -89,7 +89,7 @@ HomepageListItem::~HomepageListItem()
 }
 void HomepageListItem::mouseClicked(){
     pdelete = new Delete();
-    pdelete->setParent(this->parentWidget());
+    pdelete->setParent(this->parentWidget()->parentWidget()->parentWidget());
     pdelete->setGeometry(390,275,661,433);
     pdelete->show();
 }

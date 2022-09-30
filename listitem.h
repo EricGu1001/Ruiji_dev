@@ -26,9 +26,9 @@ public:
     void setImage(QString imgURL);
 
     void mouseMoveEvent(QMouseEvent* e);
-
-private:
     Ui::ListItem *ui;
+private:
+
 protected:
 
     bool eventFilter(QObject * obj, QEvent * event);

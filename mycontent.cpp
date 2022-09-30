@@ -12,12 +12,23 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QAction>
 MyContent::MyContent(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MyContent)
 {
     ui->setupUi(this);
 
+    SetFontUtil::setMyFont(ui->searchEdit_2);
+    SetFontUtil::setMyFont(ui->pushButton_2);
+    //搜索框实现
+    QAction* pLeadingAction = new QAction(this);
+    pLeadingAction->setIcon(QIcon(":/images/searchIcon.png"));
+    ui->searchEdit_2->addAction(pLeadingAction, QLineEdit::LeadingPosition);
+    ui->searchEdit_2->setStyleSheet("QLineEdit { background: rgb(255, 255, 255);border-radius:15px}");
+    ui->widget_titile->setStyleSheet("QWidget{background:rgb(237, 242, 250)}");
+    //上传按钮
+    ui->pushButton_2->setStyleSheet("QPushButton{background:rgb(0,154,252);border-radius:15px;color: white;}QPushButton:pressed{}QPushButton::menu-indicator{image:none;}");
 
             //fontThis.setPointSize(9);
             //QFont* font = new QFont(":/font/SourceHanSansSC-Medium.ttf");
@@ -28,7 +39,7 @@ MyContent::MyContent(QWidget *parent)
             SetFontUtil::setMyFont(ui->btn_delete);
             getAll();
         for(int i=0;i<5;i++){
-            QListWidgetItem* item = new QListWidgetItem(ui->contentList);
+            QListWidgetItem* item = new QListWidgetItem(ui->mycontentList);
             ListItem* listItem = new ListItem();
             item->setSizeHint(QSize(listItem->width(),listItem->height()));
             item->setBackground(QColor(249,251,255,1));
@@ -40,9 +51,9 @@ MyContent::MyContent(QWidget *parent)
             //listItem->setAttribute(Qt::WA_TransparentForMouseEvents);
 
             //        ui->contentList->addItem(item);
-            ui->contentList->setItemWidget(item,listItem);
+            ui->mycontentList->setItemWidget(item,listItem);
             //ui->contentList->setStyleSheet("QListWidget::item{margin-top:20px;}");
-            ui->contentList->setSpacing(20);
+            ui->mycontentList->setSpacing(20);
         }
         connect(ui->btn_delete,&QPushButton::clicked,[=](){
             deletedialog = new DeleteDialog();
@@ -50,7 +61,6 @@ MyContent::MyContent(QWidget *parent)
             deletedialog->setGeometry(390,251,660,381);
             deletedialog->show();
         });
-
     }
 
 
@@ -145,5 +155,34 @@ void MyContent::on_checkBox_stateChanged(int state)
 
     }
 
+}
+
+
+void MyContent::on_searchEdit_2_textChanged(const QString &arg1)
+{
+    qDebug() << arg1;
+    qDebug() << ui->mycontentList->count();
+    //搜索框实现
+    QString searchTarget = ui->searchEdit_2->text();
+    for (int i = 0; i < ui->mycontentList->count(); ++i) {
+       QString content;
+       QListWidgetItem* pItem  = ui->mycontentList->item(i);
+       QWidget * qitem = ui->mycontentList->itemWidget(pItem);
+       if(qitem != NULL){
+           QList<QLabel*> labelList = qitem->findChildren<QLabel*>(); //获取所有的Qlabel
+           foreach(QLabel *label, labelList)
+           {
+               if(label->objectName() == "lb_title")
+               {
+                  content = label->text();
+                  if(content.contains(searchTarget,Qt::CaseInsensitive)){
+                      ui->mycontentList->addItem(pItem);
+                      qDebug() << "111";
+                  }
+               }
+//
+           }
+       }
+    }
 }
 

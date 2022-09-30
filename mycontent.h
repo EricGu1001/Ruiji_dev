@@ -21,9 +21,12 @@ private slots:
 
     void on_checkBox_stateChanged(int arg1);
 
+    void on_searchEdit_2_textChanged(const QString &arg1);
+
 private:
     Ui::MyContent *ui;
     DeleteDialog * deletedialog = nullptr;
     void getAll();
+    void searchListWidgetItem(QString str);
 };
 #endif // MYCONTENT_H

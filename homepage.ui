@@ -28,8 +28,8 @@
   <widget class="QLabel" name="lb_file">
    <property name="geometry">
     <rect>
-     <x>73</x>
-     <y>41</y>
+     <x>83</x>
+     <y>122</y>
      <width>46</width>
      <height>24</height>
     </rect>
@@ -49,8 +49,8 @@
   <widget class="QLabel" name="lb_belonging">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>41</y>
+     <x>620</x>
+     <y>122</y>
      <width>94</width>
      <height>24</height>
     </rect>
@@ -70,8 +70,8 @@
   <widget class="QLabel" name="lb_time">
    <property name="geometry">
     <rect>
-     <x>855</x>
-     <y>41</y>
+     <x>865</x>
+     <y>122</y>
      <width>48</width>
      <height>24</height>
     </rect>
@@ -91,8 +91,8 @@
   <widget class="QLabel" name="lb_operation">
    <property name="geometry">
     <rect>
-     <x>1320</x>
-     <y>41</y>
+     <x>1330</x>
+     <y>122</y>
      <width>48</width>
      <height>24</height>
     </rect>
@@ -112,10 +112,10 @@
   <widget class="QListWidget" name="contentList">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>89</y>
+     <x>20</x>
+     <y>170</y>
      <width>1400</width>
-     <height>711</height>
+     <height>751</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -136,7 +136,127 @@ border-color: rgba(255, 255, 255, 0);</string>
     <set>QAbstractItemView::NoEditTriggers</set>
    </property>
   </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>1440</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_titile" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>38</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 650 12pt &quot;Microsoft JhengHei&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>主页</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchEdit">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>23</y>
+      <width>495</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>32769</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>搜索瑞记</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>23</y>
+      <width>138</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>上传</string>
+    </property>
+    <property name="icon">
+     <iconset resource="Res.qrc">
+      <normaloff>:/images/pullBtn.png</normaloff>:/images/pullBtn.png</iconset>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Res.qrc"/>
+ </resources>
  <connections/>
 </ui>

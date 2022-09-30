@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1440</width>
-    <height>982</height>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
   <widget class="QLabel" name="lb_file">
    <property name="geometry">
     <rect>
-     <x>73</x>
-     <y>41</y>
+     <x>83</x>
+     <y>121</y>
      <width>51</width>
      <height>31</height>
     </rect>
@@ -40,8 +40,8 @@
   <widget class="QLabel" name="lb_createtime">
    <property name="geometry">
     <rect>
-     <x>854</x>
-     <y>41</y>
+     <x>864</x>
+     <y>121</y>
      <width>95</width>
      <height>24</height>
     </rect>
@@ -61,8 +61,8 @@
   <widget class="QLabel" name="lb_operation">
    <property name="geometry">
     <rect>
-     <x>1321</x>
-     <y>41</y>
+     <x>1331</x>
+     <y>121</y>
      <width>48</width>
      <height>24</height>
     </rect>
@@ -82,8 +82,8 @@
   <widget class="PictureBox" name="recyclebin_pic" native="true">
    <property name="geometry">
     <rect>
-     <x>479</x>
-     <y>240</y>
+     <x>489</x>
+     <y>320</y>
      <width>350</width>
      <height>350</height>
     </rect>
@@ -92,8 +92,8 @@
   <widget class="QLabel" name="lb_no_content">
    <property name="geometry">
     <rect>
-     <x>590</x>
-     <y>610</y>
+     <x>600</x>
+     <y>690</y>
      <width>167</width>
      <height>24</height>
     </rect>
@@ -113,8 +113,8 @@
   <widget class="QListWidget" name="contentList">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>89</y>
+     <x>20</x>
+     <y>169</y>
      <width>1400</width>
      <height>711</height>
     </rect>
@@ -132,12 +132,97 @@
     <number>-1</number>
    </property>
   </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>1440</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget_titile" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>38</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 650 12pt &quot;Microsoft JhengHei&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>回收站</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchEdit">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>23</y>
+      <width>495</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>32769</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>搜索瑞记</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
   <zorder>contentList</zorder>
   <zorder>lb_file</zorder>
   <zorder>lb_createtime</zorder>
   <zorder>lb_operation</zorder>
   <zorder>recyclebin_pic</zorder>
   <zorder>lb_no_content</zorder>
+  <zorder>line_2</zorder>
+  <zorder>widget_titile</zorder>
  </widget>
  <customwidgets>
   <customwidget>

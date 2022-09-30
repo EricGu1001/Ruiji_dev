@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1440</width>
-    <height>982</height>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@ border:10px</string>
   <widget class="QLabel" name="lb_file">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>40</y>
+     <x>130</x>
+     <y>130</y>
      <width>46</width>
      <height>31</height>
     </rect>
@@ -41,8 +41,8 @@ border:10px</string>
   <widget class="QLabel" name="lb_createTime">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>40</y>
+     <x>950</x>
+     <y>130</y>
      <width>95</width>
      <height>31</height>
     </rect>
@@ -62,8 +62,8 @@ border:10px</string>
   <widget class="QLabel" name="lb_operation">
    <property name="geometry">
     <rect>
-     <x>1330</x>
-     <y>40</y>
+     <x>1340</x>
+     <y>130</y>
      <width>48</width>
      <height>31</height>
     </rect>
@@ -80,11 +80,11 @@ border:10px</string>
     <string>操作</string>
    </property>
   </widget>
-  <widget class="QListWidget" name="contentList">
+  <widget class="QListWidget" name="mycontentList">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>89</y>
+     <x>20</x>
+     <y>179</y>
      <width>1400</width>
      <height>711</height>
     </rect>
@@ -125,8 +125,8 @@ border-color: rgba(255, 255, 255, 0);</string>
   <widget class="QPushButton" name="btn_delete">
    <property name="geometry">
     <rect>
-     <x>83</x>
-     <y>868</y>
+     <x>93</x>
+     <y>958</y>
      <width>150</width>
      <height>60</height>
     </rect>
@@ -155,8 +155,8 @@ border-radius:15px;</string>
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>43</x>
-     <y>890</y>
+     <x>53</x>
+     <y>980</y>
      <width>24</width>
      <height>24</height>
     </rect>
@@ -165,13 +165,135 @@ border-radius:15px;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QWidget" name="widget_titile" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>38</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 650 12pt &quot;Microsoft JhengHei&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>我的内容</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>23</y>
+      <width>495</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="maxLength">
+     <number>32769</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>搜索瑞记</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>1230</x>
+      <y>23</y>
+      <width>138</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>上传</string>
+    </property>
+    <property name="icon">
+     <iconset resource="Res.qrc">
+      <normaloff>:/images/pullBtn.png</normaloff>:/images/pullBtn.png</iconset>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>1440</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Plain</enum>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
   <zorder>lb_file</zorder>
   <zorder>lb_createTime</zorder>
   <zorder>lb_operation</zorder>
-  <zorder>contentList</zorder>
+  <zorder>mycontentList</zorder>
   <zorder>checkBox</zorder>
   <zorder>btn_delete</zorder>
+  <zorder>widget_titile</zorder>
+  <zorder>line_2</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="Res.qrc"/>
+ </resources>
  <connections/>
 </ui>

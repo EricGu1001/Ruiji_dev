@@ -9,7 +9,7 @@ Widget_My::Widget_My(QWidget *parent) :
 {
     ui->setupUi(this);
     //为button设置样式
-    ui->widgetmy->setStyleSheet("QWidget{background:#00FFFFFF;border-radius:15px}QWidget:hover{border:0px;background:rgb(215, 237, 255);}");
+    ui->widgetmy->setStyleSheet("QWidget{background:rgb(215, 237, 255);border-radius:15px}");
     ui->label_Home->setAttribute(Qt::WA_TranslucentBackground);
     ui->homePic->setMode(PictureBox::FIXED_SIZE);
     //设置字体
