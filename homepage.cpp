@@ -80,6 +80,39 @@ Homepage::~Homepage()
 
 void Homepage::on_searchEdit_textChanged(const QString &arg1)
 {
+    if(arg1!=""){
+    qDebug() << arg1;
     qDebug() << ui->contentList->count();
+    //搜索框实现
+    QString searchTarget = ui->searchEdit->text();
+    for (int i = 0; i < ui->contentList->count(); ++i) {
+       QString content;
+       QListWidgetItem* pItem  = ui->contentList->item(i);
+       QWidget * qitem = ui->contentList->itemWidget(pItem);
+       if(qitem != NULL){
+           QList<QLabel*> labelList = qitem->findChildren<QLabel*>(); //获取所有的Qlabel
+           foreach(QLabel *label, labelList)
+           {
+               if(label->objectName() == "lb_title")
+               {
+                  content = label->text();
+                  if(content.contains(searchTarget,Qt::CaseInsensitive)){
+                      qDebug() << "111";
+                      qitem->show();
+                  }else{
+                      qitem->hide();
+                  }
+               }
+//
+           }
+       }
+    }
+}else{
+        for (int i = 0; i < ui->contentList->count(); ++i) {
+            QListWidgetItem* pItem  = ui->contentList->item(i);
+            QWidget * qitem = ui->contentList->itemWidget(pItem);
+            qitem->show();
+        }
+    }
 }
 

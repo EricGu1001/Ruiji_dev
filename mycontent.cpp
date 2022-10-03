@@ -160,6 +160,7 @@ void MyContent::on_checkBox_stateChanged(int state)
 
 void MyContent::on_searchEdit_2_textChanged(const QString &arg1)
 {
+    if(arg1!=""){
     qDebug() << arg1;
     qDebug() << ui->mycontentList->count();
     //搜索框实现
@@ -176,13 +177,23 @@ void MyContent::on_searchEdit_2_textChanged(const QString &arg1)
                {
                   content = label->text();
                   if(content.contains(searchTarget,Qt::CaseInsensitive)){
-                      ui->mycontentList->addItem(pItem);
                       qDebug() << "111";
+                      qitem->show();
+                  }else{
+                      qitem->hide();
                   }
                }
 //
            }
        }
     }
+}else{
+        for (int i = 0; i < ui->mycontentList->count(); ++i) {
+            QListWidgetItem* pItem  = ui->mycontentList->item(i);
+            QWidget * qitem = ui->mycontentList->itemWidget(pItem);
+            qitem->show();
+        }
+    }
 }
+
 
