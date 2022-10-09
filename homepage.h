@@ -17,6 +17,7 @@ public:
 private slots:
     void on_pushButton_clicked();
     void on_searchEdit_textChanged(const QString &arg1);
+    void on_checkBox_stateChanged(int arg1);
 
 private:
     Ui::Homepage *ui;

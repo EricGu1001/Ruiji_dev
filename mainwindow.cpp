@@ -11,12 +11,16 @@
 #include "ui_widget_my.h"
 #include "ui_widget_bin.h"
 #include "ui_widget_mycontent.h"
+
+MainWindow *MainWindow::mutualUi = nullptr;
 enum eStackedWidgetID{eForm1 = 0,eForm2,eForm3};  // 页码编号
+enum eStackedWidgetID_2{dForm1 = 0,dForm2};  // 页码编号
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    mutualUi = this;
     //设置字体
     SetFontUtil::setMyFont(ui->label_6);
     //设置左边建筑背景图片
@@ -32,15 +36,15 @@ MainWindow::MainWindow(QWidget *parent)
     pLeadingAction->setIcon(QIcon(":/images/searchIcon.png"));
 
 
-    widget_my = new Widget_My(this);
-    widget_my->setGeometry(134,112,332,64);
+    widget_my = new Widget_My(ui->page_3);
+    widget_my->setGeometry(14,112,332,64);
     widget_my->raise();
 
-    widget_mycontent = new Widget_Mycontent(this);
-    widget_mycontent->setGeometry(134,192,332,64);
+    widget_mycontent = new Widget_Mycontent(ui->page_3);
+    widget_mycontent->setGeometry(14,192,332,64);
 
-    widget_bin = new Widget_Bin(this);
-    widget_bin->setGeometry(134,272,332,64);
+    widget_bin = new Widget_Bin(ui->page_3);
+    widget_bin->setGeometry(14,272,332,64);
 
     //页面切换
     homepage = new Homepage(this);
@@ -62,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     widget_bin->ui->binPic->setImage(*imgBin);
     widget_mycontent->ui->myPic->setImage(*imgMy);
     widget_my->ui->widgetmy->setStyleSheet("QWidget{background:rgb(215, 237, 255);border:0px;border-radius:15px}");
+
 
 }
 
@@ -106,4 +111,11 @@ void MainWindow::mouseClicked_bin(){
     widget_bin->ui->binPic->setImage(*imgBin);
     widget_mycontent->ui->myPic->setImage(*imgMy);
 }
-
+void MainWindow::itemClicked(){
+    detail = new Detail(this);
+    ui->detail->insertWidget(dForm1,detail);
+    ui->detail->setCurrentIndex(dForm1);
+}
+void MainWindow::backClicked(){
+    ui->detail->removeWidget(detail);
+}

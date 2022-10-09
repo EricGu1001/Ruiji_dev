@@ -3,8 +3,11 @@
 #include "setfontutil.h"
 #include <QImage>
 #include "picturebox.h"
-#include<QFontDatabase>
+#include <QFontDatabase>
 #include <QGraphicsDropShadowEffect>
+#include <QDebug>
+#include <QMouseEvent>
+
 DeleteDialog::DeleteDialog(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DeleteDialog)
@@ -35,13 +38,22 @@ DeleteDialog::DeleteDialog(QWidget *parent) :
     SetFontUtil::setMyFont(ui->delete_content);
     SetFontUtil::setMyFont(ui->delete_tip);
     SetFontUtil::setMyFont(ui->delete_title);
-
-
 }
 void DeleteDialog::mouseClicked(){
     this->close();
+}
+void DeleteDialog::contentChange(int count){
+    delCnt = count;
+    QString str = QString::number(count);
+    ui->delete_content->setText("删除"+str+"项内容");
 }
 DeleteDialog::~DeleteDialog()
 {
     delete ui;
 }
+
+void DeleteDialog::on_delete_confirm_clicked()
+{
+
+}
+

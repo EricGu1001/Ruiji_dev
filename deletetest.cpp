@@ -29,3 +29,4 @@ DeleteTest::~DeleteTest()
 {
     delete ui;
 }
+

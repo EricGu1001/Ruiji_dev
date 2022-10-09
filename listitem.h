@@ -27,12 +27,16 @@ public:
 
     void mouseMoveEvent(QMouseEvent* e);
     Ui::ListItem *ui;
+signals:
+    void beclicked();
 private:
-
+    void* mainPtr;
+    QPoint mousePos;
 protected:
-
     bool eventFilter(QObject * obj, QEvent * event);
     void leaveEvent(QEvent *event);
+    void mousePressEvent(QMouseEvent *ev);
+    void mouseReleaseEvent(QMouseEvent *ev);
 };
 
 #endif // LISTITEM_H

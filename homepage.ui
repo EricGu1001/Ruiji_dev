@@ -7,20 +7,8 @@
     <x>0</x>
     <y>0</y>
     <width>1440</width>
-    <height>982</height>
+    <height>1080</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1440</width>
-    <height>982</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1440</width>
-    <height>982</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -113,9 +101,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>170</y>
+     <y>179</y>
      <width>1400</width>
-     <height>751</height>
+     <height>711</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -253,6 +241,49 @@ background-color: rgba(193, 220, 245, 1)</string>
      <bool>false</bool>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_delete">
+   <property name="geometry">
+    <rect>
+     <x>93</x>
+     <y>958</y>
+     <width>150</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(230, 0, 18, 1);
+border-left: 2px solid red;
+border-right: 2px solid red;
+border-top: 2px solid red;
+border-bottom: 2px solid red;
+border-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>53</x>
+     <y>980</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources>

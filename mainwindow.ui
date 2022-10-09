@@ -42,121 +42,137 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="widget_2" native="true">
+   <widget class="QStackedWidget" name="detail">
     <property name="geometry">
      <rect>
       <x>120</x>
       <y>0</y>
-      <width>360</width>
+      <width>1800</width>
       <height>1080</height>
      </rect>
     </property>
-    <widget class="QWidget" name="widget_back" native="true">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>360</width>
-       <height>98</height>
-      </rect>
-     </property>
-     <widget class="QLabel" name="label_6">
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page_3">
+     <widget class="QWidget" name="widget_2" native="true">
       <property name="geometry">
        <rect>
-        <x>60</x>
-        <y>20</y>
-        <width>101</width>
-        <height>51</height>
+        <x>0</x>
+        <y>0</y>
+        <width>360</width>
+        <height>1080</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>72</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>会议瑞记</string>
-      </property>
+      <widget class="QWidget" name="widget_back" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>360</width>
+         <height>98</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="label_6">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>20</y>
+          <width>101</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>会议瑞记</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>358</x>
+          <y>0</y>
+          <width>2</width>
+          <height>98</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>100</y>
+         <width>360</width>
+         <height>2</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="geometry">
+        <rect>
+         <x>358</x>
+         <y>98</y>
+         <width>2</width>
+         <height>981</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgba(193, 220, 245, 1);
+background-color: rgba(193, 220, 245, 1)</string>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
      </widget>
-     <widget class="Line" name="line_3">
+     <widget class="QStackedWidget" name="stackedWidget">
       <property name="geometry">
        <rect>
-        <x>358</x>
+        <x>360</x>
         <y>0</y>
-        <width>2</width>
-        <height>98</height>
+        <width>1440</width>
+        <height>1080</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:rgba(193, 220, 245, 1);
-background-color: rgba(193, 220, 245, 1)</string>
+       <string notr="true">background-color: rgb(249, 251, 255)</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+      <property name="currentIndex">
+       <number>1</number>
       </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
+      <widget class="QWidget" name="page"/>
+      <widget class="QWidget" name="page_2"/>
      </widget>
     </widget>
-    <widget class="Line" name="line">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>100</y>
-       <width>360</width>
-       <height>2</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(193, 220, 245, 1);
-background-color: rgba(193, 220, 245, 1)</string>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_4">
-     <property name="geometry">
-      <rect>
-       <x>358</x>
-       <y>98</y>
-       <width>2</width>
-       <height>981</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color:rgba(193, 220, 245, 1);
-background-color: rgba(193, 220, 245, 1)</string>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Plain</enum>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>0</y>
-      <width>1440</width>
-      <height>1080</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(249, 251, 255)</string>
-    </property>
-    <property name="currentIndex">
-     <number>1</number>
-    </property>
-    <widget class="QWidget" name="page"/>
-    <widget class="QWidget" name="page_2"/>
+    <widget class="QWidget" name="page_4"/>
    </widget>
   </widget>
  </widget>

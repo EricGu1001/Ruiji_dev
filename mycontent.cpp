@@ -2,7 +2,7 @@
 #include "ui_mycontent.h"
 #include "listitem.h"
 #include <QFont>
-#include<QFontDatabase>
+#include <QFontDatabase>
 #include <QListWidgetItem>
 #include <QSize>
 #include <QDebug>
@@ -13,6 +13,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QAction>
+
 MyContent::MyContent(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MyContent)
@@ -55,12 +56,12 @@ MyContent::MyContent(QWidget *parent)
             //ui->contentList->setStyleSheet("QListWidget::item{margin-top:20px;}");
             ui->mycontentList->setSpacing(20);
         }
-        connect(ui->btn_delete,&QPushButton::clicked,[=](){
-            deletedialog = new DeleteDialog();
-            deletedialog->setParent(this->parentWidget());
-            deletedialog->setGeometry(390,251,660,381);
-            deletedialog->show();
-        });
+//        connect(ui->btn_delete,&QPushButton::clicked,[=](){
+//            deletedialog = new DeleteDialog();
+//            deletedialog->setParent(this->parentWidget());
+//            deletedialog->setGeometry(390,251,660,381);
+//            deletedialog->show();
+//        });
     }
 
 
@@ -139,19 +140,63 @@ void MyContent::getAll()
 
 void MyContent::on_btn_delete_clicked()
 {
-
+    int count = 0;
+    int itemId;
+    deletedialog = new DeleteDialog();
+    for (int i = 0; i < ui->mycontentList->count(); ++i) {
+       QString content;
+       QListWidgetItem* pItem  = ui->mycontentList->item(i);
+       QWidget * qitem = ui->mycontentList->itemWidget(pItem);
+       QList<QLabel*> hiddenId =qitem->findChildren<QLabel*>();
+       foreach(QLabel *idlabel, hiddenId){
+           if(idlabel->objectName() == "id"){
+               itemId = idlabel->text().toInt();
+           }
+       }
+       QList<QCheckBox*> state =qitem->findChildren<QCheckBox*>();
+       foreach(QCheckBox *checkbox, state){
+           if(checkbox->isChecked()){
+               //被选中
+               count++;
+               deletedialog->ids.append(itemId);
+           }
+       }
+    }
+    if(count != 0){
+        deletedialog->contentChange(count);
+        deletedialog->setParent(this->parentWidget());
+        deletedialog->setGeometry(390,251,660,381);
+        deletedialog->show();
+    }
 }
-
-
 void MyContent::on_checkBox_stateChanged(int state)
 {
     qDebug()<<state;
+    QList<QCheckBox *> listCheck = this->findChildren<QCheckBox *>();
+    qDebug()<< listCheck.size();
     if(state == 0){
         //取消所有勾选
-
+        foreach (QCheckBox *pCheck, listCheck)
+        {
+            if(pCheck != ui->checkBox)
+            {
+                if(pCheck->isChecked()){
+                    pCheck->setCheckState(Qt::Unchecked);
+                }
+            }
+        }
     }
     if(state == 2){
         //全选
+        foreach (QCheckBox *pCheck, listCheck)
+        {
+            if(pCheck != ui->checkBox)
+            {
+                if(!pCheck->isChecked()){
+                    pCheck->setCheckState(Qt::Checked);
+                }
+            }
+        }
 
     }
 
@@ -196,4 +241,28 @@ void MyContent::on_searchEdit_2_textChanged(const QString &arg1)
     }
 }
 
+
+
+void MyContent::on_pushButton_2_clicked()
+{
+    if(puploadmenu)
+    {
+        if(puploadmenu->isHidden())
+        {
+            puploadmenu->show();
+        }
+        else {
+            puploadmenu->hide();
+        }
+
+    }
+    else {
+        puploadmenu = new Uploadmenu(this->parentWidget()->parentWidget());
+        puploadmenu->setGeometry(1428,85,300,100);
+        puploadmenu->raise();  //提示显示层数
+        puploadmenu->setMouseTracking(true);
+        puploadmenu->setWindowModality(Qt::ApplicationModal);
+        puploadmenu->show();
+    }
+}
 

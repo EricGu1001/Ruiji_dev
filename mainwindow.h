@@ -11,6 +11,7 @@ void on_pushButton_clicked();
 #include "homepage.h"
 #include "mycontent.h"
 #include "recyclebin.h"
+#include "detail.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -22,6 +23,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    static MainWindow *mutualUi;
 signals:
     void beclicked();
 private slots:
@@ -30,6 +32,8 @@ public slots:
     void mouseClicked_home();
     void mouseClicked_mycontent();
     void mouseClicked_bin();
+    void itemClicked();
+    void backClicked();
 private:
     Ui::MainWindow *ui;
     Uploadmenu * puploadmenu = nullptr;
@@ -39,5 +43,6 @@ private:
     Homepage * homepage = nullptr;
     MyContent * mycontent = nullptr;
     RecycleBin * recyclebin = nullptr;
+    Detail * detail = nullptr;
 };
 #endif // MAINWINDOW_H

@@ -65,7 +65,7 @@ void Homepage::on_pushButton_clicked()
     }
     else {
         puploadmenu = new Uploadmenu(this->parentWidget()->parentWidget());
-        puploadmenu->setGeometry(1548,85,300,100);
+        puploadmenu->setGeometry(1428,85,300,100);
         puploadmenu->raise();  //提示显示层数
         puploadmenu->setMouseTracking(true);
         puploadmenu->setWindowModality(Qt::ApplicationModal);
@@ -113,6 +113,39 @@ void Homepage::on_searchEdit_textChanged(const QString &arg1)
             QWidget * qitem = ui->contentList->itemWidget(pItem);
             qitem->show();
         }
+    }
+}
+
+
+void Homepage::on_checkBox_stateChanged(int state)
+{
+    qDebug()<<state;
+    QList<QCheckBox *> listCheck = this->findChildren<QCheckBox *>();
+    qDebug()<< listCheck.size();
+    if(state == 0){
+        //取消所有勾选
+        foreach (QCheckBox *pCheck, listCheck)
+        {
+            if(pCheck != ui->checkBox)
+            {
+                if(pCheck->isChecked()){
+                    pCheck->setCheckState(Qt::Unchecked);
+                }
+            }
+        }
+    }
+    if(state == 2){
+        //全选
+        foreach (QCheckBox *pCheck, listCheck)
+        {
+            if(pCheck != ui->checkBox)
+            {
+                if(!pCheck->isChecked()){
+                    pCheck->setCheckState(Qt::Checked);
+                }
+            }
+        }
+
     }
 }
 

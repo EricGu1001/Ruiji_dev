@@ -35,6 +35,7 @@ private:
     Ui::HomepageListItem *ui;
     Delete * pdelete = nullptr;
     DeleteTest * deletetest = nullptr;
+    QPoint mousePos;
 signals:
     void beclicked();
 public slots:
@@ -42,6 +43,8 @@ public slots:
 protected:
     bool eventFilter(QObject * obj, QEvent * event);
     void leaveEvent(QEvent *event);
+    void mousePressEvent(QMouseEvent *ev);
+    void mouseReleaseEvent(QMouseEvent *ev);
 };
 
 #endif // HOMEPAGELISTITEM_H

@@ -16,6 +16,7 @@ public:
     ~DeleteTest();
 public slots:
     void mouseClicked();
+
 private:
     Ui::DeleteTest *ui;
 };

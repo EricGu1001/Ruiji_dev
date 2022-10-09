@@ -2,7 +2,7 @@
 #define DETAIL_H
 
 #include <QWidget>
-
+#include "playertool.h"
 namespace Ui {
 class Detail;
 }
@@ -13,11 +13,11 @@ class Detail : public QWidget
 
 public:
     explicit Detail(QWidget *parent = nullptr);
-    void PushWidget(QWidget *widget);
     ~Detail();
 
 private:
     Ui::Detail *ui;
+    void* mainPtr;
 };
 
 #endif // DETAIL_H

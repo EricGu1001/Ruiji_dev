@@ -14,11 +14,12 @@ class Delete : public QWidget
 public:
     explicit Delete(QWidget *parent = nullptr);
     ~Delete();
-
 private:
     Ui::Delete *ui;
 public slots:
     void mouseClicked();
+private slots:
+    void on_pushButton_confirm_clicked();
 };
 
 #endif // DELETE_H

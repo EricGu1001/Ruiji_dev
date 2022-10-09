@@ -5,6 +5,7 @@
 #include<QFontDatabase>
 #include <QDebug>
 #include <QGraphicsEffect>
+#include "mainwindow.h"
 HomepageListItem::HomepageListItem(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::HomepageListItem)
@@ -22,7 +23,8 @@ HomepageListItem::HomepageListItem(QWidget *parent) :
     SetFontUtil::setMyFont(ui->lb_title);
     this->setMouseTracking(true);
     connect(ui->trash_pic,SIGNAL(beclicked()),this,SLOT(mouseClicked()));
-
+    connect(this,SIGNAL(beclicked()),MainWindow::mutualUi,SLOT(itemClicked()));
+    ui->id->setVisible(false);
 }
 
 
@@ -48,7 +50,16 @@ void HomepageListItem::setOperationImg(QString imgURL){
     QImage *img = new QImage(imgURL);
     ui->trash_pic->setImage(*img);
 }
-
+void HomepageListItem::mousePressEvent(QMouseEvent *ev)
+{
+    mousePos = QPoint(ev->x(), ev->y());
+}
+void HomepageListItem::mouseReleaseEvent(QMouseEvent *ev)
+{
+    if(mousePos == QPoint(ev->x(), ev->y())){
+        emit beclicked();
+    }
+}
 
 void HomepageListItem::mouseMoveEvent(QMouseEvent* e){
 

@@ -16,5 +16,12 @@
         <file>images/no_content_in_recyclebin.png</file>
         <file>font/SourceHanSansSC-Medium.ttf</file>
         <file>images/123.jpg</file>
+        <file>images/back.png</file>
+        <file>images/backward.png</file>
+        <file>images/forward.png</file>
+        <file>images/fullscreen.png</file>
+        <file>images/setting.png</file>
+        <file>images/vol.png</file>
+        <file>images/act.png</file>
     </qresource>
 </RCC>

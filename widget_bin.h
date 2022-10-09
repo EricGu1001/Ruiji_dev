@@ -18,7 +18,6 @@ public:
 signals:
     void beclicked();
 private:
-
     QPoint mousePos;
 protected:
     void mousePressEvent(QMouseEvent *ev);

@@ -20,6 +20,7 @@ SOURCES += \
     mainwindow.cpp \
     mycontent.cpp \
     picturebox.cpp \
+    playertool.cpp \
     recyclebin.cpp \
     setfontutil.cpp \
     uploadconfirm.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     mainwindow.h \
     mycontent.h \
     picturebox.h \
+    playertool.h \
     recyclebin.h \
     setfontutil.h \
     uploadconfirm.h \
@@ -60,6 +62,7 @@ FORMS += \
     listitem.ui \
     mainwindow.ui \
     mycontent.ui \
+    playertool.ui \
     recyclebin.ui \
     uploadconfirm.ui \
     uploadmenu.ui \

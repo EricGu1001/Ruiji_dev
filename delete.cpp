@@ -36,3 +36,9 @@ Delete::~Delete()
 {
     delete ui;
 }
+
+void Delete::on_pushButton_confirm_clicked()
+{
+
+}
+

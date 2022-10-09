@@ -6,6 +6,8 @@
 #include <QMouseEvent>
 #include<QFontDatabase>
 #include <QGraphicsEffect>
+#include <QMouseEvent>
+#include <mainwindow.h>
 ListItem::ListItem(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ListItem)
@@ -22,6 +24,8 @@ ListItem::ListItem(QWidget *parent) :
     SetFontUtil::setMyFont(ui->create_time);
     ui->create_time->setAlignment(Qt::AlignCenter);
     this->setMouseTracking(true);
+    connect(this,SIGNAL(beclicked()),MainWindow::mutualUi,SLOT(itemClicked()));
+    ui->id->setVisible(false);
 }
 
 //设置会议标题
@@ -43,6 +47,17 @@ void ListItem::setImage(QString imgURL){
 }
 void ListItem::mouseMoveEvent(QMouseEvent* e){
 
+}
+void ListItem::mousePressEvent(QMouseEvent *ev)
+{
+    mousePos = QPoint(ev->x(), ev->y());
+}
+void ListItem::mouseReleaseEvent(QMouseEvent *ev)
+{
+    if(mousePos == QPoint(ev->x(), ev->y())){
+        emit beclicked();
+        qDebug() << "123";
+    }
 }
 bool ListItem::eventFilter(QObject * obj, QEvent * event)
     {
