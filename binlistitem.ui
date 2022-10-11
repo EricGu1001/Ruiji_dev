@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ListItem</class>
- <widget class="QWidget" name="ListItem">
+ <class>BinListitem</class>
+ <widget class="QWidget" name="BinListitem">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,24 +9,6 @@
     <width>1360</width>
     <height>158</height>
    </rect>
-  </property>
-  <property name="minimumSize">
-   <size>
-    <width>1360</width>
-    <height>158</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1360</width>
-    <height>158</height>
-   </size>
-  </property>
-  <property name="mouseTracking">
-   <bool>true</bool>
-  </property>
-  <property name="focusPolicy">
-   <enum>Qt::NoFocus</enum>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -43,24 +25,21 @@
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 255, 255);border-radius:15px;</string>
    </property>
-   <widget class="QCheckBox" name="checkBox_item">
+   <widget class="PictureBox" name="thumbnail" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>24</width>
-      <height>24</height>
+      <x>44</x>
+      <y>30</y>
+      <width>176</width>
+      <height>99</height>
      </rect>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lb_title">
     <property name="geometry">
      <rect>
-      <x>254</x>
-      <y>43</y>
+      <x>251</x>
+      <y>48</y>
       <width>214</width>
       <height>24</height>
      </rect>
@@ -77,42 +56,11 @@
      <string>两分钟上手会议瑞记</string>
     </property>
    </widget>
-   <widget class="PictureBox" name="thumbnail" native="true">
-    <property name="geometry">
-     <rect>
-      <x>47</x>
-      <y>25</y>
-      <width>176</width>
-      <height>99</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="create_time">
-    <property name="geometry">
-     <rect>
-      <x>830</x>
-      <y>63</y>
-      <width>281</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color:rgba(102, 102, 102, 1);</string>
-    </property>
-    <property name="text">
-     <string>2022年8月15日 上午8:55</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="lb_duration">
     <property name="geometry">
      <rect>
-      <x>255</x>
-      <y>86</y>
+      <x>252</x>
+      <y>91</y>
       <width>101</width>
       <height>25</height>
      </rect>
@@ -125,11 +73,39 @@
     <property name="styleSheet">
      <string notr="true">color:rgba(102, 102, 102, 1)</string>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+    <property name="text">
+     <string>2分16秒</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_createTime">
+    <property name="geometry">
+     <rect>
+      <x>827</x>
+      <y>68</y>
+      <width>281</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgba(102, 102, 102, 1)</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;2分16秒&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>2022年8月15日 上午8:55</string>
+    </property>
+   </widget>
+   <widget class="PictureBox" name="trash_pic" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1301</x>
+      <y>67</y>
+      <width>38</width>
+      <height>38</height>
+     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="id">
@@ -145,10 +121,23 @@
      <string/>
     </property>
    </widget>
-   <widget class="PictureBox" name="trash_pic" native="true">
+   <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>1301</x>
+      <x>10</x>
+      <y>74</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="PictureBox" name="recover_pic" native="true">
+    <property name="geometry">
+     <rect>
+      <x>1240</x>
       <y>67</y>
       <width>38</width>
       <height>38</height>

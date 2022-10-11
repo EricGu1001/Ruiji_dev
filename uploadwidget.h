@@ -18,6 +18,9 @@ public:
 protected:
     void dragEnterEvent(QDragEnterEvent *event);
     void dropEvent(QDropEvent *event);
+    virtual void mouseMoveEvent(QMouseEvent *event);
+    virtual void mousePressEvent(QMouseEvent *event);
+    virtual void mouseReleaseEvent(QMouseEvent *event);
 
 signals:
     void beclicked();
@@ -28,6 +31,7 @@ public slots:
 
 private:
     void setupView();
+    QPoint z;
     Ui::UploadWidget *ui;
 };
 

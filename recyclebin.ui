@@ -215,6 +215,92 @@ background-color: rgba(193, 220, 245, 1)</string>
     </property>
    </widget>
   </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>992</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_delete">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>970</y>
+     <width>150</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(230, 0, 18, 1);
+border-left: 2px solid red;
+border-right: 2px solid red;
+border-top: 2px solid red;
+border-bottom: 2px solid red;
+border-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>990</y>
+     <width>24</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_delete_2">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>970</y>
+     <width>150</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgba(230, 0, 18, 1);
+border-left: 2px solid red;
+border-right: 2px solid red;
+border-top: 2px solid red;
+border-bottom: 2px solid red;
+border-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>恢复</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
   <zorder>contentList</zorder>
   <zorder>lb_file</zorder>
   <zorder>lb_createtime</zorder>
@@ -223,6 +309,10 @@ background-color: rgba(193, 220, 245, 1)</string>
   <zorder>lb_no_content</zorder>
   <zorder>line_2</zorder>
   <zorder>widget_titile</zorder>
+  <zorder>checkBox</zorder>
+  <zorder>btn_delete</zorder>
+  <zorder>checkBox_2</zorder>
+  <zorder>btn_delete_2</zorder>
  </widget>
  <customwidgets>
   <customwidget>

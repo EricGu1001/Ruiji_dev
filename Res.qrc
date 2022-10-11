@@ -23,5 +23,8 @@
         <file>images/setting.png</file>
         <file>images/vol.png</file>
         <file>images/act.png</file>
+        <file>images/recover.png</file>
+        <file>images/bin_small.png</file>
+        <file>images/bin_widget.png</file>
     </qresource>
 </RCC>

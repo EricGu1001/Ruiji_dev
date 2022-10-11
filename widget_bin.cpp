@@ -13,7 +13,7 @@ Widget_Bin::Widget_Bin(QWidget *parent) :
     //设置字体
     SetFontUtil::setMyFont(ui->label_Bin);
     ui->binPic->setMode(PictureBox::FIXED_SIZE);
-    QImage* imgBin = new QImage(":/images/bin.png");
+    QImage* imgBin = new QImage(":/images/bin_widget.png");
     ui->binPic->setImage(*imgBin);
 }
 void Widget_Bin::mousePressEvent(QMouseEvent *ev)

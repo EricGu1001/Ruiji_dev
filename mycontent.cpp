@@ -49,6 +49,7 @@ MyContent::MyContent(QWidget *parent)
             listItem->setDuration("2分16秒");
             listItem->setCreateTime("2022年9月5日 下午7：05");
             listItem->setImage(":/img/123.jpg");
+            listItem->setOperationImg(":/images/bin.png");
             //listItem->setAttribute(Qt::WA_TransparentForMouseEvents);
 
             //        ui->contentList->addItem(item);
@@ -102,6 +103,7 @@ void MyContent::getAll()
             QJsonParseError parseJsonErr;
 
             QJsonDocument jsonDoc = QJsonDocument::fromJson(QString(replyData).toUtf8(), &parseJsonErr);
+            qDebug()<<jsonDoc;
             if(parseJsonErr.error != QJsonParseError::NoError)
             {
                 qDebug() << "JSON格式错误";
@@ -109,31 +111,40 @@ void MyContent::getAll()
             }
             else    // JSON格式正确
             {
-                QJsonObject rootObj = jsonDoc.object();  // 转化为root对象
+                QJsonArray array =jsonDoc.array();
+                qDebug()<<array.count();
+                for (int i = 0; i < array.count(); ++i) {
+                   QJsonValue resArray = array.at(i);
+                   QJsonObject res = resArray.toObject();
+                   qDebug()<<res["id"].toInt();
+                }
+                QJsonObject rootObj = jsonDoc.object();
+                // 转化为root对象
 
-                 QJsonValue rootValue = rootObj.value("data");  // 获取指定key对应的value,
-                 QJsonObject arrObject = rootValue.toObject(); // 再将值转换为obj:上一级key对应的值实际为数组对象
+//                 QJsonValue rootValue = rootObj.value("data");  // 获取指定key对应的value,
+//                 qDebug() << rootValue;
+//                 QJsonObject arrObject = rootValue.toObject(); // 再将值转换为obj:上一级key对应的值实际为数组对象
 
-                 QJsonValue arrValue = arrObject.value("records");
-                 if(arrValue.isArray()) // 判断获取的QJsonValue对象是不是数组结构
-                 {
-                     QJsonArray array = arrValue.toArray();
-                     for(int i=0;i<array.size();i++)
-                     {
-                         QJsonValue recordsValue = array.at(i);
-                         QJsonObject recordsObject = recordsValue.toObject();
-                         QString id = recordsObject["id"].toString();
-                         QString createdTime = recordsObject["createdTime"].toString();
-                         qDebug() <<"id=" <<id;
-                     }
-                 }
+
+//                 if(arrValue.isArray()) // 判断获取的QJsonValue对象是不是数组结构
+//                 {
+//                     QJsonArray array = arrValue.toArray();
+//                     for(int i=0;i<array.size();i++)
+//                     {
+//                         QJsonValue recordsValue = array.at(i);
+//                         QJsonObject recordsObject = recordsValue.toObject();
+//                         QString id = recordsObject["id"].toString();
+//                         QString createdTime = recordsObject["createdTime"].toString();
+//                         qDebug() <<"id=" <<id;
+//                     }
+//                 }
 
             }
             reply->deleteLater();
         }
     });
     //发送异步get请求
-    manager->get(QNetworkRequest(QUrl("http://localhost:8080/note/my")));
+    manager->get(QNetworkRequest(QUrl("http://121.41.94.69:8080/litters")));
 }
 
 

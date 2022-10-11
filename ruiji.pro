@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    binlistitem.cpp \
     delete.cpp \
     deletedialog.cpp \
     deletetest.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
     mycontent.cpp \
     picturebox.cpp \
     playertool.cpp \
+    recover.cpp \
     recyclebin.cpp \
     setfontutil.cpp \
     uploadconfirm.cpp \
@@ -31,6 +33,7 @@ SOURCES += \
     widget_mycontent.cpp
 
 HEADERS += \
+    binlistitem.h \
     delete.h \
     deletedialog.h \
     deletetest.h \
@@ -43,6 +46,7 @@ HEADERS += \
     mycontent.h \
     picturebox.h \
     playertool.h \
+    recover.h \
     recyclebin.h \
     setfontutil.h \
     uploadconfirm.h \
@@ -53,6 +57,7 @@ HEADERS += \
     widget_mycontent.h
 
 FORMS += \
+    binlistitem.ui \
     delete.ui \
     deletedialog.ui \
     deletetest.ui \
@@ -63,6 +68,7 @@ FORMS += \
     mainwindow.ui \
     mycontent.ui \
     playertool.ui \
+    recover.ui \
     recyclebin.ui \
     uploadconfirm.ui \
     uploadmenu.ui \

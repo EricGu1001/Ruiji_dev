@@ -13,7 +13,7 @@ UploadWidget::UploadWidget(QWidget *parent) :
     ui(new Ui::UploadWidget)
 {
     ui->setupUi(this);
-   setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint|Qt::Tool|Qt::WindowStaysOnTopHint|Qt::Dialog);
+   setWindowFlags(Qt::CustomizeWindowHint|Qt::FramelessWindowHint|Qt::Tool|Qt::WindowStaysOnTopHint);
      //外层窗口显示为透明
     setAttribute(Qt::WA_TranslucentBackground,true);
     ui->frame->setStyleSheet("QFrame{border-radius:20px;background:rgb(255, 255, 255);}");
@@ -81,5 +81,31 @@ void UploadWidget::setupView()
 }
 //关闭上传对话框
 
+void UploadWidget::mouseMoveEvent(QMouseEvent *event)
+{
+    QWidget::mouseMoveEvent(event);
+
+    QPoint y = event->globalPos(); // 鼠标相对于桌面左上角位置
+    QPoint x = y - this->z;
+
+    this->move(x);
+}
+
+void UploadWidget::mousePressEvent(QMouseEvent *event)
+{
+    QWidget::mousePressEvent(event);
+
+    QPoint x = this->geometry().topLeft(); // 窗口左上角相对于桌面左上角位置
+    QPoint y = event->globalPos(); // 鼠标相对于桌面左上角位置
+    this->z = y - x; // 这是个定值
+
+}
+
+void UploadWidget::mouseReleaseEvent(QMouseEvent *event)
+{
+    QWidget::mouseReleaseEvent(event);
+
+    this->z = QPoint();
+}
 
 

@@ -60,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(widget_mycontent,SIGNAL(beclicked()),this,SLOT(mouseClicked_mycontent()));
     connect(widget_bin,SIGNAL(beclicked()),this,SLOT(mouseClicked_bin()));
     QImage* imgHome = new QImage(":/images/my_click .png");
-    QImage* imgBin = new QImage(":/images/bin.png");
+    QImage* imgBin = new QImage(":/images/bin_widget.png");
     QImage* imgMy = new QImage(":/images/file.png");
     widget_my->ui->homePic->setImage(*imgHome);
     widget_bin->ui->binPic->setImage(*imgBin);
@@ -78,7 +78,7 @@ MainWindow::~MainWindow()
 void MainWindow::mouseClicked_home(){
     ui->stackedWidget->setCurrentIndex(eForm1);
     QImage* imgHome = new QImage(":/images/my_click .png");
-    QImage* imgBin = new QImage(":/images/bin.png");
+    QImage* imgBin = new QImage(":/images/bin_widget.png");
     QImage* imgMy = new QImage(":/images/file.png");
     widget_my->ui->homePic->setImage(*imgHome);
     widget_my->ui->widgetmy->setStyleSheet("QWidget{background:rgb(215, 237, 255);border:0px;;border-radius:15px}");
@@ -90,7 +90,7 @@ void MainWindow::mouseClicked_home(){
 void MainWindow::mouseClicked_mycontent(){
     ui->stackedWidget->setCurrentIndex(eForm2);
     QImage* imgHome = new QImage(":/images/my.png");
-    QImage* imgBin = new QImage(":/images/bin.png");
+    QImage* imgBin = new QImage(":/images/bin_widget.png");
     QImage* imgMy = new QImage(":/images/file_click.png");
     widget_my->ui->homePic->setImage(*imgHome);
     widget_my->ui->widgetmy->setStyleSheet("QWidget{background:#00FFFFFF;border-radius:15px}QWidget:hover{border:0px;background:rgb(215, 237, 255);}");

@@ -43,8 +43,9 @@ Uploadmenu::Uploadmenu(QWidget *parent) :
 
 void Uploadmenu::mousePressEvent(QMouseEvent *ev){
     if(ev->button() == Qt::LeftButton){
+//        QPoint globalPos = this->parentWidget()->mapToGlobal(QPoint(0,0));
         puploadwidget = new UploadWidget(NULL);
-        puploadwidget->setAttribute(Qt::WA_ShowModal, true);
+        puploadwidget->setWindowModality(Qt::ApplicationModal);
         puploadwidget->setParent(this->parentWidget());
         puploadwidget->setMouseTracking(true);
         puploadwidget->setGeometry(515,255,890,570); //这里要调整好

@@ -15,8 +15,13 @@ public:
     explicit RecycleBin(QWidget *parent = nullptr);
     ~RecycleBin();
 
+private slots:
+    void on_searchEdit_textChanged(const QString &arg1);
+
 private:
     Ui::RecycleBin *ui;
+    void getAll();
+    void noContent();
 };
 
 #endif // RECYCLEBIN_H

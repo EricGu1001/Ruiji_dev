@@ -4,6 +4,7 @@
 #include "homepagelistitem.h"
 #include "QAction"
 #include "QDebug"
+#include "QGraphicsEffect"
 Homepage::Homepage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Homepage)
@@ -16,7 +17,6 @@ Homepage::Homepage(QWidget *parent) :
     SetFontUtil::setMyFont(ui->lb_operation);
     SetFontUtil::setMyFont(ui->lb_time);
     ui->widget_titile->setStyleSheet("QWidget{background:rgb(237, 242, 250)}");
-
 
     //搜索框实现
     QAction* pLeadingAction = new QAction(this);
